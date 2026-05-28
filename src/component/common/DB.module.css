@@ -1,0 +1,154 @@
+.mainDB{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.maindbList{
+    display: flex;
+    font-size: 14px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.maindbList:first-child{
+    background-color: #F1F5F9;
+    text-align: center;
+    font-weight: bold;
+    color: #6B7280;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.maindbList li{
+    padding: 10px;
+    text-align: center;
+}
+
+.maindbList li:first-child{
+    width: 5%;
+}
+
+.maindbList li:nth-child(2){
+    width: 5.5%;
+}
+
+.maindbList li:nth-child(3){
+    width: 6%;
+    font-weight: bold;
+}
+
+.maindbList li:nth-child(4){
+    width: 7%;
+}
+
+.maindbList li:nth-child(5){
+    width: 6%;
+}
+
+.maindbList li:nth-child(6){
+    width: 6%;
+}
+
+.maindbList li:nth-child(7){
+    width: 10%;
+}
+
+.maindbList li:nth-child(8){
+    width: 42.5%;
+    text-align: left;
+}
+
+.maindbList li:nth-child(9){
+    width: 6%;
+}
+
+.maindbList li:nth-child(10){
+    width: 6%;
+}
+
+.mainStatus span{
+    display: block;
+    width: 80px;
+    border-radius: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: #16A34A;
+    font-weight: bold;
+    background-color: #DCFCE7;
+}
+
+.mainStatus1 span{
+    display: block;
+    width: 80px;
+    border-radius: 50px;
+    height: 25px;
+    line-height: 25px;
+    color: #D97706;
+    font-weight: bold;
+    background-color: #FEF3C7;
+}
+
+.mainUpdate span{
+    display: block;
+    border-radius: 50px;
+    margin-left: 10px;
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    color: #2563EB;
+    font-weight: bold;
+    background-color: #EFF6FF;
+}
+
+.maindbListlast{
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    border: 1px solid #E5E7EB;
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #6B7280;
+    font-size: 14px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.maindbListlast li:nth-child(2), .maindbListlast li:nth-child(3), .maindbListlast li:nth-child(4), .maindbListlast li:nth-child(5), .maindbListlast li:nth-child(6){
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: -3px;
+}  
+
+.maindbListlast li img{
+    margin-top: 7px;
+    margin-left: 8px;
+}
+
+.maindbListlast li:nth-child(6){
+    right: 20px;
+}
+
+.maindbListlast li:nth-child(5){
+    right: 53px;
+}
+
+.maindbListlast li:nth-child(4){
+    right: 86px;
+}
+
+.maindbListlast li:nth-child(3){
+    right: 119px;
+    background-color: #1B3A6B;
+    color: white;
+}
+
+.maindbListlast li:nth-child(2){
+    right: 152px;
+}

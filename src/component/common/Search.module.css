@@ -1,0 +1,103 @@
+.mainSearch{
+    width: 100%;
+    height: 98px;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    font-size: 13px;
+}
+
+.mainTopsearch{
+    display: flex;
+}
+
+.mainTopsearch img{
+    width: 12px;
+    height: 12px;
+    margin-top: 2px;
+}
+
+.mainTopsearch p{
+    color: #1B3A6B;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.mainBotsearch{
+    display: flex;
+    margin-top: 15px;
+}
+
+.mainBotsearch label{
+    font-size: 13px;
+    color: black;
+}
+
+.mainBotsearch input{
+    padding-left: 12px;
+}
+
+.mainBotsearch input::placeholder{
+    color: #9CA3AF;
+    font-size: 13px;
+}
+
+.mainBotsearch input, .mainBotsearch select{
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    width: 140px;
+    height: 30px;
+    margin: -5px 20px 0 5px;
+    font-size: 14px;
+}
+
+.mainBotsearch select{
+    color: #9CA3AF;
+    font-size: 13px;
+    padding-left: 12px;
+}
+
+.mainBotsearch option{
+    color: black;
+}
+
+.mainBotsearch button{
+    height: 30px;
+    border-radius: 5px;
+    margin-top: -5px;
+    text-align: center;
+    line-height: 30px;
+    display: flex;
+    cursor: pointer;
+}
+
+.mainBotsearch img{
+    width: 14px;
+    height: 14px;
+    margin-top: 7px;
+    margin-left: 18px;
+}
+
+.search_btn{
+    width: 90px;
+    background-color: #1B3A6B;
+    margin-right: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.rotate_btn{
+    width: 105px;
+    border: 1px solid #D1D5DB;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.mainBotsearch button span{
+    margin-left: 5px;
+}

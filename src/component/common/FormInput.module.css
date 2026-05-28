@@ -1,0 +1,347 @@
+.form_container{
+    width: 100%;
+    height: 434px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid #E5E7EB;
+    position: relative;
+    border-radius: 8px;
+}
+
+.form_header{
+    height: 46px;
+    background-color: #F8FAFC;
+    padding:  0 20px;
+    line-height: 46px;
+    color: #1B3A6B;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.form_header img{
+    width: 13px;
+    height: 13px;
+    margin-top: 16px;
+    margin-right: 5px;
+}
+
+.form_header div{
+    position: absolute;
+    right: 20px;
+    font-size: 12px;
+    color: #2563EB;
+    background-color: #EFF6FF;
+    width: 240px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50px;
+    top: 12px;
+}
+
+.form_header div img{
+    margin-left: 12px;
+    margin-top: 7px;
+}
+
+.form_header div p{
+    margin-top: -9px;
+}
+
+.form_body{
+    height: 388px;
+    padding: 20px;
+}
+
+.form_data{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.form_data label{
+    font-size: 13px;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.data_type{
+    display: flex;
+    flex-direction: column;
+    width: 224px;
+    height: 58px;
+    margin-right: 20px;
+}
+
+.type_button{
+    display: flex;
+    flex-direction: row;
+}
+
+.type_button button{
+    width: 56px;
+    height: 36px;
+    padding: 0 13px;
+    font-size: 13px;
+}
+
+.button1{
+    font-weight: bold;
+    background-color: #1B3A6B;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: white;
+}
+
+.button2, .button3, .button4{
+    color: #6B7280;
+}
+
+.button2{
+    border: 1px solid #D1D5DB;
+    border-left: 0;
+    border-right: 0;
+}
+
+.button3{
+    border: 1px solid #D1D5DB;
+    border-right: 0;
+}
+
+.button4{
+    border: 1px solid #D1D5DB;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.data_date{
+    margin-right: 20px;
+    width: 180px;
+}
+
+.data_num{
+    width: 160px;
+    margin-right: 20px;
+}
+
+.data_num input{
+    width: 100%;
+    height: 36px;
+    border: 1px solid #D1D5DB;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    background-color: #F9FAFB;
+}
+
+.data_num input::placeholder{
+    color: #9CA3AF;
+}
+
+.data_cont{
+    width: 260px;
+}
+
+.data_cont input{
+    width: 100%;
+    border: 1px solid #D1D5DB;
+    padding:  0 12px;
+    height: 36px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.data_cont input::placeholder{
+    color: #9CA3AF;
+}
+
+.data_compare{
+    width: 100%;
+    height: 124px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.data_compare label{
+    color: #6B7280;
+}
+
+.compare_before, .compare_after{
+    width: 543px;
+}
+
+.compare_arrow{
+    width: 64px;
+}
+
+.compare_arrow img{
+    width: 20px;
+    height: 20px;
+    margin-left: 9px;
+    margin-top: 35px;
+}
+
+.compare_before, .compare_after{
+    background-color: #FFF7F7;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #FECACA;
+}
+
+.before_header, .after_header{
+    width: 511px;
+    height: 23px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.before_header p, .after_header p{
+    width: 60px;
+    height: 23px;
+    background-color: #FEE2E2;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    line-height: 23px;
+    color: #DC2626;
+}
+
+.before_header span ,.after_header span{
+    width: 443px;
+    height: 2px;
+    background-color: #FECACA;
+    margin-top: 11px;
+    margin-left: 8px;
+}
+
+.before_cont, .after_cont{
+    width: 100%;
+    height: 57px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.before_cont1{
+    display: flex;
+    flex-direction: column;
+    color: #374151;
+}
+
+.before_cont label, .after_cont label{
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.before_cont p{
+    font-size: 13px;
+    width: 162px;
+    height: 36px;
+    background-color: white;
+    border: 1px solid #FECACA;
+    border-radius: 6px;
+    padding:  0 12px;
+    line-height: 36px;
+}
+
+.compare_after{
+    background-color: #F0F7FF;
+    border: 1px solid #BFDBFE;
+}
+
+.after_header p{
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+}
+
+.after_header span{
+    background-color: #BFDBFE;
+}
+
+.after_cont select{
+    width: 162px;
+    height: 36px;
+    border: 1px solid #2563EB;
+    background-color: white;
+    color: #1D4ED8;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 0 12px;
+    border-radius: 6px;
+}
+
+.form_addInfo{
+    width: 100%;
+    height: 82px;
+    margin-top: 20px;
+}
+
+.form_addInfo label{
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.form_addInfo input{
+    width: 100%;
+    height: 60px;
+    padding: 10px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.form_addInfo input::placeholder{
+    color: #9CA3AF;
+}
+
+.form_addbtn{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+
+.form_addbtn button{
+    width: 83px;
+    height: 36px;
+    display: flex;
+    font-size: 13px;
+    border-radius: 6px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+.form_del{
+    border: 1px solid #D1D5DB;
+    color: #374151;
+}
+
+.form_del img{
+    width: 13px;
+    height: 13px;
+    margin: 11px 5px 0 18px;
+}
+
+.form_down{
+    background-color: #1B3A6B;
+    margin-left: 8px;
+}
+
+.form_down img{
+    width: 13px;
+    height: 13px;
+    margin: 11px 5px 0 18px;
+}
+
+.form_card{
+    width: 100%;
+    height: 266px;
+}
