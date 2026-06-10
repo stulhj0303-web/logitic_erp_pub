@@ -1,71 +1,55 @@
-'use client';
+"use client";
 
-import style from './DB.module.css';
-import { useEffect, useState } from 'react';
-import baseApi from '@/api/baseApi';
+import style from "./DB.module.css";
 
-export default function DB({data}){
+export default function DB({ employees = [] }) {
+  console.log("employees22222 >>> ", employees);
+  return (
+    <div className={style.mainDB}>
+      <ul className={style.maindbList}>
+        <li>NO</li>
+        <li>사원번호</li>
+        <li>성명</li>
+        <li>부서</li>
+        <li>직급</li>
+        <li>입사일</li>
+        <li>연락처</li>
+        <li style={{ textAlign: "center" }}>이메일</li>
+        <li>재직상태</li>
+        <li>관리</li>
+      </ul>
 
-    const [employee, setEmployee] = useState([]);
+      {employees.map((item, index) => (
+        <ul
+          className={style.maindbList}
+          style={{ backgroundColor: "white" }}
+          key={index}
+        >
+          <li>{index + 1}</li>
+          <li>{item.employeeNo}</li>
+          <li>{item.name}</li>
+          <li>{item.data_dept}</li>
+          <li>{item.data_level}</li>
+          <li>{item.data_date}</li>
+          <li>{item.phone}</li>
+          <li style={{ textAlign: "left" }}>{item.email}</li>
+          <li>{item.data_status}</li>
+          <li>{item.data_manage}</li>
+        </ul>
+      ))}
 
-    useEffect(() => {
-        // 1. api를 요청해서 받는다. (await랑 async는 같이 사용)
-        const getEmployee = async () => {
-            const response = await baseApi.get("/api/v1/employees");
-            console.log(response.data.data);
-
-            // 2. useState 넣는다.
-            setEmployee(response.data.data);
-        }
-
-        getEmployee();
-
-
-        // 3. useState에 있는 데이터를 렌더링 시킨다.
-    },[])
-
-    return(
-
-
-        
-
-        <div className={style.mainDB}>
-            <ul className={style.maindbList}>
-                <li>NO</li>
-                <li>사원번호</li>
-                <li>성명</li>
-                <li>부서</li>
-                <li>직급</li>
-                <li>입사일</li>
-                <li>연락처</li>
-                <li style={{textAlign:'center'}}>이메일</li>
-                <li>재직상태</li>
-                <li>관리</li>
-            </ul>
-
-            {data.map((item, index) => (
-                <ul className={style.maindbList} style={{backgroundColor:"white"}}>
-                    <li>{index+1}</li>
-                    <li>{item.data_num}</li>
-                    <li>{item.data_name}</li>
-                    <li>{item.data_dept}</li>
-                    <li>{item.data_level}</li>
-                    <li>{item.data_date}</li>
-                    <li>{item.data_tel}</li>
-                    <li style={{textAlign:'left'}}>{item.data_email}</li>
-                    <li>{item.data_status}</li>
-                    <li>{item.data_manage}</li>
-                </ul>
-            ))}
-
-            <ul className={style.maindbListlast}>
-                <li>총 4건</li>
-                <li><img src="/Chevron Left.png" alt="" /></li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li><img src="/Chevron Right.png" alt="" /></li>
-            </ul>
-        </div>
-    )
+      <ul className={style.maindbListlast}>
+        <li>총 4건</li>
+        <li>
+          <img src="/Chevron Left.png" alt="" />
+        </li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>
+          <img src="/Chevron Right.png" alt="" />
+        </li>
+      </ul>
+    </div>
+  );
 }
