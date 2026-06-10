@@ -2,6 +2,7 @@ import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Header from "@/component/common/Header";
 import Aside from "@/component/common/Aside";
+import Certificate from "@/component/common/Certificate";
 
 export default function page(){
 
@@ -198,6 +199,23 @@ export default function page(){
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <Certificate
+                                cer={[
+                                    {
+                                    date: "발급일시",
+                                    type: "증명서 종류",
+                                    use: "용도",
+                                    submmit: "제출처",
+                                    lang: "언어",
+                                    page: "부수",
+                                    number: "발급번호",
+                                    manage: "관리"
+                                    }
+                                ]}
+                            />
+
                         </div>
                     </div>
                 </div>

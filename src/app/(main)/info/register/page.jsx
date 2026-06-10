@@ -4,7 +4,6 @@ import Aside from '@/component/common/Aside'
 import Header from '@/component/common/Header'
 import Search1 from '@/component/common/Search1'
 import FormInput from '@/component/common/FormInput'
-import DB from '@/component/common/DB'
 
 
 export default function page(){
@@ -52,22 +51,7 @@ export default function page(){
                         
                         <FormInput/>
 
-                        <DB
-                            data = {
-                                [
-                                    'NO',
-                                    '사원번호',
-                                    '성명',
-                                    '부서',
-                                    '직급',
-                                    '입사일',
-                                    '연락처',
-                                    '이메일',
-                                    '재직상태',
-                                    '관리'
-                                ]
-                            }
-                        />
+                        
                     </div>
 
                 </div>

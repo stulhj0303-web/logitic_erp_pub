@@ -1,0 +1,47 @@
+.register_list{
+    padding: 0 16px;
+    background-color: #F1F5F9;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    display: flex;
+    color: #6B7280;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.register_list li:first-child{
+    width: 44px;
+}
+
+.register_list li:nth-child(2){
+    width: 100px;
+}
+
+.register_list li:nth-child(3){
+    width: 90px;
+}
+
+.register_list li:nth-child(4){
+    width: 70px;
+}
+
+.register_list li:nth-child(5){
+    width: 80px;
+}
+
+.register_list li:nth-child(6), .register_list li:nth-child(7){
+    width: 160px;
+}
+
+.register_list li:nth-child(8){
+    width: 100px;
+}
+
+.register_list li:nth-child(9){
+    width: 80px;
+}
+
+.register_list li:nth-child(10){
+    width: 274px;
+}

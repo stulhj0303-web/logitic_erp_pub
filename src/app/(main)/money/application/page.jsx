@@ -3,6 +3,7 @@ import Nav from '@/component/common/Nav'
 import Aside from '@/component/common/Aside'
 import Header from '@/component/common/Header'
 import Appli from '@/component/common/Appli'
+import Certificate from '@/component/common/Certificate'
 
 
 
@@ -48,6 +49,7 @@ export default function page(){
                         />
 
                         <Appli/>
+
                     </div>
 
                 </div>

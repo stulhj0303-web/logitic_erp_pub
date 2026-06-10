@@ -175,7 +175,7 @@ export default function Appli(){
                             <p>파일 선택</p>
                         </button>
                     </div>
-
+                    
                 </div>
             </div>
         </div>

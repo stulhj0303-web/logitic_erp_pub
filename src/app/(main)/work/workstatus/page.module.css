@@ -1,0 +1,255 @@
+body{
+    max-width: 1440px;
+}
+
+.container{
+    margin: 0 auto;
+    width: 100%;
+    background-color: #F1F5F9;
+}
+
+.main{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+.InfoMain{
+    width: 1230px;
+    padding: 20px;
+}
+
+.mainContainer{
+    margin: 0 auto;
+}
+
+.work_search{
+    width: 100%;
+    padding: 14px 20px;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+    display: flex;
+    position: relative;
+    border-radius: 8px;
+}
+
+.search_cont{
+    display: flex;
+    gap: 16px;
+}
+
+.search_day{
+    width: 200px;
+    display: flex;
+}
+
+.search_day button{
+    width: 34px;
+    height: 34px;
+    background-color: #F8FAFC;
+    border: 1px solid #D1D5DB;
+    position: relative;
+}
+
+.left{
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.right{
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.search_day img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search_day span{
+    border: 1px solid #D1D5DB;
+    background-color: #FFFFFF;
+    padding: 0 20px;
+    width: 183px;
+    height: 34px;
+    font-size: 14px;
+    border-left: 0;
+    border-right: 0;
+    display: block;
+    font-weight: bold;
+    line-height: 34px;
+    text-align: center;
+}
+
+.search_cont label{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 34px;
+}
+
+.search_cont select{
+    padding: 0 12px;
+    height: 34px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    width: 160px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.search{
+    width: 83px;
+    height: 34px;
+    background-color: #1B3A6B;
+    border-radius: 6px;
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    line-height: 34px;
+    display: flex;
+    cursor: pointer;
+}
+
+.search img{
+    width: 13px;
+    height: 13px;
+    margin-top: 10px;
+    margin-left: 16px;
+    margin-right: 5px;
+}
+
+.search_status{
+    position: absolute;
+    right: 20px;
+    display: flex;
+}
+
+.search_status div{
+    border-radius: 50px;
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 5px 12px;
+    display: flex;
+    margin-top: 5px;
+    color: #6B7280;
+}
+
+.search_status span{
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.work_status{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.work_header{
+    height: 44px;
+    padding: 0 16px;
+    background-color: #F8FAFC;
+    border: 1px solid #E5E7EB;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    position: relative;
+}
+
+.work_header img{
+    width: 14px;
+    height: 14px;
+    margin-top: 15px;
+}
+
+.work_header span{
+    line-height: 44px;
+    margin-left: 5px;
+    color: #1B3A6B;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.work_header div{
+    display: flex;
+    position: absolute;
+    right: 16px;
+    gap: 12px;
+    line-height: 44px;
+}
+
+.work_header div span{
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+    margin-top: 18px;
+}
+
+.work_header div p{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.work_cont{
+    width: 100%;
+}
+
+.cont_list{
+    display: flex;
+    text-align: center;
+    line-height: 38px;
+    font-size: 11px;
+}
+
+.cont_list li:first-child{
+    width: 72px;
+    font-weight: 900;
+}
+
+.cont_list li:nth-child(2){
+    width: 80px;
+    font-weight: 900;
+}
+
+.cont_list li:nth-child(n+3):nth-child(-n+33){
+    width: 26px;
+}
+
+.cont_list li:nth-child(n+34):nth-child(-n+37){
+    width: 38px;
+}
+
+.cont_list li:nth-child(34){
+    background-color: #EFF6FF;
+    border-right: 1px solid #BFDBFE;
+    font-weight: 900;
+    color: #1D4ED8;
+}
+
+.cont_list li:nth-child(35){
+    background-color: #FFF7ED;
+    border-right: 1px solid #FED7AA;
+    font-weight: 900;
+    color: #EA580C;
+}
+
+.cont_list li:nth-child(36){
+    background-color: #F0FDF4;
+    border-right: 1px solid #BBF7D0;
+    font-weight: 900;
+    color: #16A34A;
+}
+
+.cont_list li:nth-child(37){
+    background-color: #FFF1F2;
+    border-right: 1px solid #FECACA;
+    font-weight: 900;
+    color: #E11D48;
+}

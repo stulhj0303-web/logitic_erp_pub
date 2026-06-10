@@ -1,5 +1,6 @@
 
 import style from './FormInput.module.css';
+import Register from './Register';
 
 export default function FormInput(){
 
@@ -124,8 +125,26 @@ export default function FormInput(){
 
             <div className={style.form_card}>
                 <div className={style.card_header}>
+                    <img src="/Clock (1).png" alt="" />
                     <p>발령 이력</p>
+                    <span>총 3건</span>
                 </div>
+
+                <Register
+                    register={[
+                        {
+                            data_num: '사원번호',
+                            data_name: '성명',
+                            data_dept: '부서',
+                            data_level: '직급',
+                            data_date: '입사일',
+                            data_tel: '연락처',
+                            data_email: '이메일',
+                            data_status: '재직상태',
+                            data_manage: '관리'
+                        }
+                    ]}
+                />
             </div>
 
         </div>

@@ -9,11 +9,11 @@
     display: flex;
     font-size: 14px;
     border-bottom: 1px solid #E5E7EB;
+    text-align: center;
 }
 
 .maindbList:first-child{
     background-color: #F1F5F9;
-    text-align: center;
     font-weight: bold;
     color: #6B7280;
     border-bottom: 1px solid #E5E7EB;
@@ -25,45 +25,45 @@
 }
 
 .maindbList li:first-child{
-    width: 5%;
+    width: 44px;
 }
 
 .maindbList li:nth-child(2){
-    width: 5.5%;
+    width: 100px;
 }
 
 .maindbList li:nth-child(3){
-    width: 6%;
+    width: 72px;
     font-weight: bold;
 }
 
 .maindbList li:nth-child(4){
-    width: 7%;
+    width: 110px;
 }
 
 .maindbList li:nth-child(5){
-    width: 6%;
+    width: 72px;
 }
 
 .maindbList li:nth-child(6){
-    width: 6%;
+    width: 96px;
 }
 
 .maindbList li:nth-child(7){
-    width: 10%;
+    width: 120px;
 }
 
 .maindbList li:nth-child(8){
-    width: 42.5%;
+    width: 384px;
     text-align: left;
 }
 
 .maindbList li:nth-child(9){
-    width: 6%;
+    width: 80px;
 }
 
 .maindbList li:nth-child(10){
-    width: 6%;
+    width: 80px;
 }
 
 .mainStatus span{

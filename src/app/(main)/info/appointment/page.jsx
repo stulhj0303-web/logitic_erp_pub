@@ -51,20 +51,19 @@ export default function page(){
                         <Search/>
 
                         <DB
-                            data = {
-                                [
-                                    'NO',
-                                    '사원번호',
-                                    '성명',
-                                    '부서',
-                                    '직급',
-                                    '입사일',
-                                    '연락처',
-                                    '이메일',
-                                    '재직상태',
-                                    '관리'
-                                ]
-                            }
+                            data = {[
+                                { 
+                                    data_num: '사원번호',
+                                    data_name: '성명',
+                                    data_dept: '부서',
+                                    data_level: '직급',
+                                    data_date: '입사일',
+                                    data_tel: '연락처',
+                                    data_email: '이메일',
+                                    data_status: '재직상태',
+                                    data_manage: '관리'
+                                }
+                            ]}
                         />
 
                     </div>

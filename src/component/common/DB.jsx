@@ -44,27 +44,27 @@ export default function DB({data}){
             </ul>
 
             {data.map((item, index) => (
-                <ul className={style.maindbList}>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li>{item}</li>
-                    <li style={{textAlign:'center'}}>{item}</li>
-                    <li></li>
-                    <li></li>
+                <ul className={style.maindbList} style={{backgroundColor:"white"}}>
+                    <li>{index+1}</li>
+                    <li>{item.data_num}</li>
+                    <li>{item.data_name}</li>
+                    <li>{item.data_dept}</li>
+                    <li>{item.data_level}</li>
+                    <li>{item.data_date}</li>
+                    <li>{item.data_tel}</li>
+                    <li style={{textAlign:'left'}}>{item.data_email}</li>
+                    <li>{item.data_status}</li>
+                    <li>{item.data_manage}</li>
                 </ul>
             ))}
 
             <ul className={style.maindbListlast}>
                 <li>총 4건</li>
-                <li><img src="Chevron Left.png" alt="" /></li>
+                <li><img src="/Chevron Left.png" alt="" /></li>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
-                <li><img src="Chevron Right.png" alt="" /></li>
+                <li><img src="/Chevron Right.png" alt="" /></li>
             </ul>
         </div>
     )

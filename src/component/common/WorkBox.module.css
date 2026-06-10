@@ -1,0 +1,63 @@
+.workBox_li{
+    width: 100%;
+    padding: 0 12px;
+    background-color: #FFF;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: #6B7280;
+}
+
+.workBox_li input[type="checkbox"]{
+    accent-color: #1B3A6B;
+    width: 16px;
+    height: 16px;
+}
+
+.workBox_li li:first-child{
+    width: 38px;
+}
+
+.workBox_li li:nth-child(2){
+    width: 90px;
+}
+
+.workBox_li li:nth-child(3){
+    width: 70px;
+}
+
+.workBox_li li:nth-child(4){
+    width: 100px;
+}
+
+.workBox_li li:nth-child(5){
+    width: 70px;
+}
+
+.workBox_li li:nth-child(6){
+    width: 90px;
+}
+
+.workBox_li li:nth-child(7){
+    width: 80px;
+}
+
+.workBox_li li:nth-child(8){
+    width: 80px;
+}
+
+.workBox_li li:nth-child(9){
+    width: 60px;
+}
+
+.workBox_li li:nth-child(10){
+    width: 58px;
+}
+
+.workBox_li li:nth-child(11){
+    width: 80px;
+}

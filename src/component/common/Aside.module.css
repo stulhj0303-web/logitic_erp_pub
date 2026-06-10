@@ -37,7 +37,7 @@
     color: #60A5FA;
 }
 
-.InfoList li:nth-child(2), .InfoList li:nth-child(3), .InfoList li:nth-child(4){
+.InfoList li:not(:first-child) {
     background-color: #1E293B;
     padding-left: 40px;
 }

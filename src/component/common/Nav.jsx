@@ -30,5 +30,6 @@ export default function Nav() {
                         <img src='/Log Out.png'/>
                     </div>
                 </div>
-            </div>)
+            </div>
+        )
 }
