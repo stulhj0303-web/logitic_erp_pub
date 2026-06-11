@@ -14,8 +14,16 @@ export default function page() {
     try {
       const res = await baseApi.post("/api/v1/employees/login", loginInfo);
       const token = res.data.data.accessToken;
-      if (token) {
+      const depart = res.data.data.departmentName;
+      const empNo = res.data.data.employeeNo;
+      const name = res.data.data.name;
+      const position = res.data.data.name;
+      if ({ token, depart, empNo, name, positon }) {
         localStorage.setItem("accessToken", res.data.data.accessToken);
+        localStorage.setItem("employeeNo", res.data.data.employeeNo);
+        localStorage.setItem("departmentName", res.data.data.departmentName);
+        localStorage.setItem("name", res.data.data.name);
+        localStorage.setItem("position", res.data.data.position);
         router.push("/info/appointment");
       } else {
         alert("로그인 실패");
