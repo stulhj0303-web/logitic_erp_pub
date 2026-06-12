@@ -1,0 +1,159 @@
+.mainDB {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.maindbList {
+  display: flex;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.maindbList:first-child {
+  background-color: #f1f5f9;
+  font-weight: bold;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.maindbList li {
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.maindbList li:first-child {
+  width: 44px;
+}
+
+.maindbList li:nth-child(2) {
+  width: 100px;
+}
+
+.maindbList li:nth-child(3) {
+  width: 110px;
+  font-weight: bold;
+}
+
+.maindbList li:nth-child(4) {
+  width: 90px;
+}
+
+.maindbList li:nth-child(5) {
+  width: 80px;
+}
+
+.maindbList li:nth-child(6) {
+  width: 100px;
+}
+
+.maindbList li:nth-child(7) {
+  width: 100px;
+}
+
+.maindbList li:nth-child(8) {
+  width: 364px;
+}
+
+.maindbList li:nth-child(9) {
+  width: 90px;
+}
+
+.maindbList li:nth-child(10) {
+  width: 80px;
+}
+
+.mainStatus span {
+  display: block;
+  width: 80px;
+  border-radius: 50px;
+  height: 25px;
+  line-height: 25px;
+  color: #16a34a;
+  font-weight: bold;
+  background-color: #dcfce7;
+}
+
+.mainStatus1 span {
+  display: block;
+  width: 80px;
+  border-radius: 50px;
+  height: 25px;
+  line-height: 25px;
+  color: #d97706;
+  font-weight: bold;
+  background-color: #fef3c7;
+}
+
+.mainUpdate span {
+  display: block;
+  border-radius: 50px;
+  margin-left: 10px;
+  width: 60px;
+  height: 25px;
+  line-height: 25px;
+  color: #2563eb;
+  font-weight: bold;
+  background-color: #eff6ff;
+}
+
+.maindbListlast {
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.maindbListlast li:nth-child(2),
+.maindbListlast li:nth-child(3),
+.maindbListlast li:nth-child(4),
+.maindbListlast li:nth-child(5),
+.maindbListlast li:nth-child(6) {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  line-height: 28px;
+  text-align: center;
+  margin-top: -3px;
+}
+
+.maindbListlast li img {
+  margin-top: 7px;
+  margin-left: 8px;
+}
+
+.maindbListlast li:nth-child(6) {
+  right: 20px;
+}
+
+.maindbListlast li:nth-child(5) {
+  right: 53px;
+}
+
+.maindbListlast li:nth-child(4) {
+  right: 86px;
+}
+
+.maindbListlast li:nth-child(3) {
+  right: 119px;
+  background-color: #1b3a6b;
+  color: white;
+}
+
+.maindbListlast li:nth-child(2) {
+  right: 152px;
+}
