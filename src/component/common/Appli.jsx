@@ -1,12 +1,26 @@
 "use client";
 
 import s from "./Appli.module.css";
+import baseApi from "@/api/baseApi";
 import { useEffect, useState } from "react";
 
 export default function Appli() {
   const [appliInfo, setAppliInfo] = useState();
   const [eventType, setEventType] = useState("본인결혼");
   const [eventTargetInfo, setEventTargetInfo] = useState("");
+
+  const 경조비신청리스트조회 = async () => {
+    const token = localStorage.getItem("accessToken");
+    const res = await baseApi.get("/api/v1/support", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
+
+  useEffect(() => {
+    경조비신청리스트조회();
+  }, []);
 
   useEffect(() => {
     const 사원번호 = localStorage.getItem("employeeNo");
@@ -28,6 +42,72 @@ export default function Appli() {
       신청전체일자,
     });
   }, []);
+
+  const 경조사비신청하기 = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    //경조구분 확인하기
+    if (!eventType) {
+      alert("경조구분은 필수입니다.");
+      return;
+    }
+    if (!eventTargetInfo?.targetName) {
+      alert("대상자 성명은 필수입니다.");
+      return;
+    }
+    if (!eventTargetInfo?.familyRelation) {
+      alert("관계 작성은 필수입니다.");
+      return;
+    }
+    // if (!eventTargetInfo?.targetName) {
+    //   alert("경조일 입력은 필수입니다.");
+    //   return;
+    // }
+
+    if (!eventTargetInfo?.bankName) {
+      alert("은행 선택은 필수입니다.");
+      return;
+    }
+    if (!eventTargetInfo?.accountNumber) {
+      alert("계좌번호는 필수입니다.");
+      return;
+    }
+    if (
+      !(
+        10 <= eventTargetInfo?.accountNumber.length &&
+        12 >= eventTargetInfo?.accountNumber.length
+      )
+    ) {
+      alert("올바른 계좌번호가 아닙니다.");
+      return;
+    }
+    if (!eventTargetInfo?.accountHolder) {
+      alert("예금주 작성은 필수입니다.");
+      return;
+    }
+    const res = await baseApi.post(
+      "/api/v1/support",
+      {
+        eventType: eventType,
+        familyRelation: eventTargetInfo?.familyRelation,
+        targetName: eventTargetInfo?.targetName,
+        applicationDate: "2026-06-12",
+        eventDate: "2026-06-12",
+        requestedAmount: 50000,
+        eventLocation: eventTargetInfo?.eventLocation,
+        bankName: eventTargetInfo?.bankName,
+        accountNumber: eventTargetInfo?.accountNumber,
+        accountHolder: eventTargetInfo?.accountHolder,
+        approvalStatus: "확인",
+        memo: "string",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+  };
 
   return (
     <div className={s.appli_container}>
@@ -278,7 +358,7 @@ export default function Appli() {
             <div className={s.main_cont}>
               <label style={{ display: "flex" }}>계좌번호</label>
               <input
-                type="text"
+                type="number"
                 placeholder="-없이 숫자만 입력"
                 style={{ width: "240px", fontSize: "13px" }}
                 onChange={(e) => {
@@ -301,7 +381,7 @@ export default function Appli() {
                   setEventTargetInfo((prev) => {
                     return {
                       ...prev,
-                      accountName: e.target.value,
+                      accountHolder: e.target.value,
                     };
                   });
                 }}
@@ -345,7 +425,7 @@ export default function Appli() {
             <button
               className={s.app_btn}
               onClick={() => {
-                console.log(eventType, eventTargetInfo);
+                경조사비신청하기();
               }}
             >
               <img src="/Send Horizontal.png" alt="" />

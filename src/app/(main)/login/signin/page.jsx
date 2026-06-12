@@ -34,19 +34,6 @@ export default function page() {
     }
   };
 
-  useEffect(() => {
-    const getEmployees = async () => {
-      const token = localStorage.getItem("accessToken");
-      const res = await baseApi.get("/api/v1/employees", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log(res);
-    };
-    getEmployees();
-  }, []);
-
   return (
     <div className={s.allcontainer}>
       <div className={s.maincontainer}>

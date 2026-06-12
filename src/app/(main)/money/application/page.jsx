@@ -3,6 +3,7 @@ import Nav from "@/component/common/Nav";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
 import Appli from "@/component/common/Appli";
+import AppliDB from "@/component/common/AppliDB";
 
 export default function page() {
   return (
@@ -52,6 +53,12 @@ export default function page() {
             />
 
             <Appli />
+
+            <div className={style.database}>
+              <img src="/Clock (1).png" alt="" />
+              <span>나의 경조비 신청 현황</span>
+            </div>
+            <AppliDB />
           </div>
         </div>
       </div>
