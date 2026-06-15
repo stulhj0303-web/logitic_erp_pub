@@ -1,139 +1,142 @@
-.container{
-    margin: 0 auto;
-    width: 100%;
-    background-color: #F1F5F9;
+.container {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #f1f5f9;
 }
 
-.nav{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 56px;
-    position: relative;
-    background-color: #1B3A6B;
-    color: white;
-    font-size: 14px;
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 56px;
+  position: relative;
+  background-color: #1b3a6b;
+  color: white;
+  font-size: 14px;
 }
 
-.navLeft{
-    width: 210px;
-    display: flex;
-    line-height: 56px;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 26px;
+.navLeft {
+  width: 210px;
+  display: flex;
+  line-height: 56px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 26px;
 }
 
-.navLeft img{
-    width: 18px;
-    height: 18px;
-    margin-top: 18px;
-    margin-left: 10px;
-    margin-right: 5px;
+.navLeft img {
+  width: 18px;
+  height: 18px;
+  margin-top: 18px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-.navRight{
-    width: 25%;
-    position: absolute;
-    left: 210px;
-    line-height: 56px;
+.navRight {
+  width: 25%;
+  position: absolute;
+  left: 210px;
+  line-height: 56px;
 }
 
-.navRlist{
-    display: flex;
-    flex-direction: row;
+.navRlist {
+  display: flex;
+  flex-direction: row;
 }
 
-.navRlist li{
-    text-align: center;
-    font-weight: bold;
-    font-size: 14px;
-    width: 96px;
+.navRlist li {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  width: 96px;
+  cursor: pointer;
 }
 
-.navRlist li:last-child{
-    width: 109px;
+.navRlist li:last-child {
+  width: 109px;
 }
 
-.navRlist li:first-child{
-    background-color: #2D5F9E;
+.navRlist li:first-child {
+  background-color: #2d5f9e;
 }
 
-.navRlist li:nth-child(2),.navRlist li:nth-child(3),.navRlist li:nth-child(4){
-    font-weight: lighter;
-    color: #93C5FD;
+.navRlist li:nth-child(2),
+.navRlist li:nth-child(3),
+.navRlist li:nth-child(4) {
+  font-weight: lighter;
+  color: #93c5fd;
 }
 
-.login{
-    position: absolute;
-    right: 20px;
-    width: 220px;
-    display: flex;
-    flex-direction: row;
-    height: 56px;
+.login {
+  position: absolute;
+  right: 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  height: 56px;
 }
 
-.loginBell{
-    width: 15%;
-    margin-top: 18px;
-    margin-bottom: 14px;
-    display: flex;
+.loginBell {
+  width: 15%;
+  margin-top: 18px;
+  margin-bottom: 14px;
+  display: flex;
 }
 
-.loginBell img{
-    width: 18px;
-    height: 18px;
-    margin-left: -5px;
-    margin-right: 12px;
+.loginBell img {
+  width: 18px;
+  height: 18px;
+  margin-left: -5px;
+  margin-right: 12px;
 }
 
-.loginBell span{
-    width: 1px ;
-    height: 30px;
-    display: block;
-    background-color: #3B5F9A;
-    margin-top: -5px;
+.loginBell span {
+  width: 1px;
+  height: 30px;
+  display: block;
+  background-color: #3b5f9a;
+  margin-top: -5px;
 }
 
-.loginProfile{
-    width: 30px;
-    height: 30px;
-    background-color: #3B82F6;
-    margin: 13px 15px 0 15px;
-    border-radius: 50%;
-    font-weight: bold;
-    text-align: center;
-    line-height: 30px;
+.loginProfile {
+  width: 30px;
+  height: 30px;
+  background-color: #3b82f6;
+  margin: 13px 15px 0 15px;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
 }
 
-.loginInfo{
-    display: flex;
-    line-height: 56px;
-    font-size: 13px;
-    color: #CBD5E1;
+.loginInfo {
+  display: flex;
+  line-height: 56px;
+  font-size: 13px;
+  color: #cbd5e1;
 }
 
-.loginInfo hr{
-    width: 1px;
-    height: 20px;
-    background-color: #CBD5E1;
-    margin-top: 18px;
+.loginInfo hr {
+  width: 1px;
+  height: 20px;
+  background-color: #cbd5e1;
+  margin-top: 18px;
 }
 
-.loginInfo li:first-child{
-    padding-right: 10px;
+.loginInfo li:first-child {
+  padding-right: 10px;
 }
 
-.loginInfo li:last-child{
-    padding-left: 10px;
+.loginInfo li:last-child {
+  padding-left: 10px;
 }
 
-.logout{
-    margin-left: 10px;
+.logout {
+  margin-left: 10px;
 }
 
-.logout img{
-    width: 18px;
-    height: 18px;
-    margin-top: 18px;
-}         
+.logout img {
+  width: 18px;
+  height: 18px;
+  margin-top: 18px;
+}

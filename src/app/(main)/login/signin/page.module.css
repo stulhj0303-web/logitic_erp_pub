@@ -1,305 +1,310 @@
-.allcontainer{
-    width: 100%;
+.allcontainer {
+  width: 100%;
 }
 
-.maincontainer{
-    max-width: 1440px;
+.maincontainer {
+  max-width: 1440px;
 }
 
-.main{
-    max-width: 1440px;
-    display: flex;
+.main {
+  max-width: 1440px;
+  display: flex;
 }
 
-.mainLeft{
-    width: 660px;
-    height: 844px;
-    background-image: linear-gradient(-90deg, #0F2547 20%, #1E40AF 80%);
-    text-align: center;
-    position: relative;
+.mainLeft {
+  width: 660px;
+  height: 844px;
+  background-image: linear-gradient(-90deg, #0f2547 20%, #1e40af 80%);
+  text-align: center;
+  position: relative;
 }
 
-.leftP{
-    width: 184px;
-    height: 29px;
-    background-color: rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 7px 16px;
-    box-sizing: border-box;
-    color: #93C5FD;
-    font-size: 12px;
-    font-weight: 500;
-    position: absolute;
-    top: 130px;
-    left: 50%;
-    transform: translateX(-50%);
+.leftP {
+  width: 184px;
+  height: 29px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 7px 16px;
+  box-sizing: border-box;
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.leftP img{
-    margin-left: 5px;
-    margin-right: 3px;
+.leftP img {
+  margin-left: 5px;
+  margin-right: 3px;
 }
 
-.leftTitle{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 532px;
-    top: 180px;
+.leftTitle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 532px;
+  top: 180px;
 }
 
-.leftTitle p{
-    font-weight: 700;
-    color: white;
-    font-size: 38px;
+.leftTitle p {
+  font-weight: 700;
+  color: white;
+  font-size: 38px;
 }
 
-.leftTitle span{
-    font-size: 38px;
-    font-weight: 700;
-    color: #60A5FA;
+.leftTitle span {
+  font-size: 38px;
+  font-weight: 700;
+  color: #60a5fa;
 }
 
-.leftcont{
-    color: #BFDBFE;
-    font-size: 15px;
-    font-weight: 400;
-    position: absolute;
-    top: 310px;
-    left: 50%;
-    transform: translateX(-50%);
+.leftcont {
+  color: #bfdbfe;
+  font-size: 15px;
+  font-weight: 400;
+  position: absolute;
+  top: 310px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.leftlist{
-    display: flex;
-    position: absolute;
-    top: 380px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 32px;
-    width: 344px;
+.leftlist {
+  display: flex;
+  position: absolute;
+  top: 380px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 32px;
+  width: 344px;
 }
 
-.leftLi p{
-    color: white;
-    font-weight: 700;
-    font-size: 26px;
+.leftLi p {
+  color: white;
+  font-weight: 700;
+  font-size: 26px;
 }
 
-.leftLi span{
-    color: #93C5FD;
-    font-size: 12px;
-    font-weight: 400;
+.leftLi span {
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.hr{
-    width: 1px;
-    height: 44px;
-    background-color: white;
-    opacity: 14.24%;
+.hr {
+  width: 1px;
+  height: 44px;
+  background-color: white;
+  opacity: 14.24%;
 }
 
-.leftbutton{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 480px;
+.leftbutton {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 480px;
 }
 
-.buttonLi{
-    width: 532px;
-    height: 66px;
-    background-color: rgba(255, 255, 255, 7.06%);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 12.55%);
-    padding: 14px 18px;
-    display: flex;
+.buttonLi {
+  width: 532px;
+  height: 66px;
+  background-color: rgba(255, 255, 255, 7.06%);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 12.55%);
+  padding: 14px 18px;
+  display: flex;
 }
 
-.img{
-    width: 38px;
-    height: 38px;
-    background-color: rgba(255, 255, 255, 8.24%);
-    border-radius: 8px;
-    position: relative;
+.img {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 8.24%);
+  border-radius: 8px;
+  position: relative;
 }
 
-.img img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.buttontext{
-    text-align: left;
-    margin-left: 12px;
+.buttontext {
+  text-align: left;
+  margin-left: 12px;
 }
 
-.buttontext p{
-    color: white;
-    font-weight: 600;
-    font-size: 14px;
+.buttontext p {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-.buttontext span{
-    color: #BFDBFE;
-    font-size: 12px;
-    font-weight: 400;
+.buttontext span {
+  color: #bfdbfe;
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.mainRight{
-    position: relative;
-    width: 780px;
-    height: 844px;
+.mainRight {
+  position: relative;
+  width: 780px;
+  height: 844px;
 }
 
-.rightcont{
-    position: absolute;
-    width: 400px;
-    height: 497px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.rightcont {
+  position: absolute;
+  width: 400px;
+  height: 497px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.rightTitle{
-    color: #111827;
-    font-size: 30px;
-    font-weight: 700;
+.rightTitle {
+  color: #111827;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.mainRight input{
-    outline: none;
+.mainRight input {
+  outline: none;
 }
 
-.rightInput, .rightInput1{
-    margin-top: 6px;
-    display: flex;
-    flex-direction: column;
+.rightInput,
+.rightInput1 {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
 }
 
-.rightInput label, .rightInput1 label{
-    color: #374151;
-    font-weight: 500;
-    font-size: 13px;
+.rightInput label,
+.rightInput1 label {
+  color: #374151;
+  font-weight: 500;
+  font-size: 13px;
 }
 
-.rightInput input, .rightInput1 input{
-    width: 400px;
-    height: 50px;
-    padding: 0 16px;
-    border: 1px solid #D1D5DB;
-    border-radius: 10px;
+.rightInput input,
+.rightInput1 input {
+  width: 400px;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
 }
 
-.rightInput input::placeholder , .rightInput1 input::placeholder{
-    color: #9CA3AF;
-    font-size: 14px;
+.rightInput input::placeholder,
+.rightInput1 input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
 }
 
-.rightInput{
-    background-image: url('/Mail.png');
-    background-repeat: no-repeat;
-    background-position: 16px;
-    background-position-y: 46px;
+.rightInput {
+  background-image: url("/Mail.png");
+  background-repeat: no-repeat;
+  background-position: 16px;
+  background-position-y: 46px;
 }
 
-.rightInput input, .rightInput1 input{
-    padding-left: 40px;
+.rightInput input,
+.rightInput1 input {
+  padding-left: 40px;
 }
 
-.rightInput1{
-    background-image: url('/Lock.png'), url('/Eye Off.png');
-    background-repeat: no-repeat;
-    background-position: 16px,365px;
-    background-position-y: 34px, 36px;
+.rightInput1 {
+  background-image: url("/Lock.png"), url("/Eye Off.png");
+  background-repeat: no-repeat;
+  background-position: 16px, 365px;
+  background-position-y: 34px, 36px;
 }
 
-.checkbox{
-    margin-top: 10px;
-    display: flex;
-    position: relative;
+.checkbox {
+  margin-top: 10px;
+  display: flex;
+  position: relative;
 }
 
-.checkbox [type="checkbox"]{
-    accent-color: #1E3A5F;
+.checkbox [type="checkbox"] {
+  accent-color: #1e3a5f;
 }
 
-.checkbox p{
-    color: #6B7280;
-    font-size: 13px;
-    font-weight: 400;
-    margin-left: 10px;
-    margin-top: 3px;
+.checkbox p {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-top: 3px;
 }
 
-.search{
-    position: absolute;
-    right: 0;
-    font-size: 13px;
-    color: #2563EB;
-    font-weight: 500;
+.search {
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 500;
 }
 
-.signin{
-    width: 400px;
-    height: 50px;
-    background-color: #1E3A5F;
-    border-radius: 10px;
-    font-weight: 600;
-    position: relative;
-    color: white;
-    margin-top: 20px;
+.signin {
+  width: 400px;
+  height: 50px;
+  background-color: #1e3a5f;
+  border-radius: 10px;
+  font-weight: 600;
+  position: relative;
+  color: white;
+  margin-top: 20px;
 }
 
-.signin img{
-    position: absolute;
-    top: 50%;
-    left: 150px;
-    transform: translateY(-50%);
+.signin img {
+  position: absolute;
+  top: 50%;
+  left: 150px;
+  transform: translateY(-50%);
 }
 
-.spancss{
-    width: 100%;
-    display: flex;
-    height: 16px;
-    margin: 12px 0;
+.spancss {
+  width: 100%;
+  display: flex;
+  height: 16px;
+  margin: 12px 0;
 }
 
-.spancss span{
-    display: block;
-    width: 176px;
-    height: 1px;
-    background-color: #E5E7EB;
-    margin-top: 9px;
+.spancss span {
+  display: block;
+  width: 176px;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin-top: 9px;
 }
 
-.spancss p{
-    color: #9CA3AF;
-    font-size: 13px;
+.spancss p {
+  color: #9ca3af;
+  font-size: 13px;
 }
 
-.signup{
-    margin-top: 20px;
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 54%;
+.signup {
+  margin-top: 20px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54%;
 }
 
-.signup p{
-    color: #6B7280;
-    font-size: 14px;
+.signup p {
+  color: #6b7280;
+  font-size: 14px;
 }
 
-.signup span{
-    color: #2563EB;
-    font-size: 14px;
-    font-weight: 600;
-    margin-left: 3px;
+.signup span {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 3px;
 }

@@ -1,52 +1,53 @@
-.main{
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 56px);
+.main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 56px);
 }
 
-.peopleInfo{
-    width: 210px;
-    background-color: #1E293B;
+.peopleInfo {
+  width: 210px;
+  background-color: #1e293b;
 }
 
-.InfoList{
-    color: #60A5FA;
-    width: 210px;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: #162032;
+.InfoList {
+  color: #60a5fa;
+  width: 210px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #162032;
 }
 
-.InfoList img{
-    width: 13px;
-    height: 13px;
-    margin-top: 2px;
-    margin-right: 5px;
-    margin-left: 5px;
+.InfoList img {
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-.InfoList li{
-    display: flex;
-    padding: 10px;
-    color: #94A3B8;
-    font-weight: lighter;
+.InfoList li {
+  display: flex;
+  padding: 10px;
+  color: #94a3b8;
+  font-weight: lighter;
+  cursor: pointer;
 }
 
-.InfoList li:first-child{
-    font-weight: bold;
-    color: #60A5FA;
+.InfoList li:first-child {
+  font-weight: bold;
+  color: #60a5fa;
 }
 
 .InfoList li:not(:first-child) {
-    background-color: #1E293B;
-    padding-left: 40px;
+  background-color: #1e293b;
+  padding-left: 40px;
 }
 
-.InfoList span{
-    width: 3px;
-    height: 3px;
-    background-color: #94A3B8;
-    border-radius: 50px;
-    margin-top: 7px;
-    margin-right: 5px;
+.InfoList span {
+  width: 3px;
+  height: 3px;
+  background-color: #94a3b8;
+  border-radius: 50px;
+  margin-top: 7px;
+  margin-right: 5px;
 }

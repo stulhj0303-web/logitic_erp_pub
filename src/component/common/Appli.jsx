@@ -426,6 +426,7 @@ export default function Appli() {
               className={s.app_btn}
               onClick={() => {
                 경조사비신청하기();
+                경조비신청리스트조회();
               }}
             >
               <img src="/Send Horizontal.png" alt="" />

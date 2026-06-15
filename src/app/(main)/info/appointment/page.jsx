@@ -44,9 +44,9 @@ export default function page() {
             {
               titleInfo: { iconPath: "/User.png", titleName: "인사정보" },
               submenuList: [
-                "인사정보등록",
-                "사원명수/인사기록카드",
-                "인사발령등록",
+                { name: "인사정보등록", path: "/info/appointment" },
+                { name: "사원명수/인사기록카드" },
+                { name: "인사발령등록", path: "/info/register" },
               ],
             },
             {
@@ -54,14 +54,17 @@ export default function page() {
                 iconPath: "/Heart Handshake.png",
                 titleName: "경조비관리",
               },
-              submenuList: ["경조비신청", "경조비신청현황"],
+              submenuList: [
+                { name: "경조비신청", path: "/money/application" },
+                { name: "경조비신청현황" },
+              ],
             },
             {
               titleInfo: {
                 iconPath: "/File Text.png",
                 titleName: "증명서관리",
               },
-              submenuList: ["증명서발급"],
+              submenuList: [{ name: "증명서발급", path: "/certificate" }],
             },
           ]}
         />

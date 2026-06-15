@@ -3,7 +3,7 @@ import baseApi from "@/api/baseApi";
 import style from "./AppliDB.module.css";
 import { useEffect, useState } from "react";
 
-export default function DB({ employees = [] }) {
+export default function AppliDB() {
   const [tableList, setTableList] = useState([]);
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export default function DB({ employees = [] }) {
 
     console.log("res?.data?.data", res?.data?.data);
     setTableList(res?.data?.data || []);
+    event;
   };
 
   useEffect(() => {
@@ -50,26 +51,6 @@ export default function DB({ employees = [] }) {
         <li>관리</li>
       </ul>
 
-      {employees.length > 0 &&
-        employees.map((item, index) => (
-          <ul
-            className={style.maindbList}
-            style={{ backgroundColor: "white" }}
-            key={index}
-          >
-            <li>{index + 1}</li>
-            <li>{item.employeeNo}</li>
-            <li>{item.name}</li>
-            <li>{item.data_dept}</li>
-            <li>{item.data_level}</li>
-            <li>{item.data_date}</li>
-            <li>{item.phone}</li>
-            <li style={{ textAlign: "left" }}>{item.email}</li>
-            <li>{item.data_status}</li>
-            <li>{item.data_manage}</li>
-          </ul>
-        ))}
-
       {tableList.length > 0 &&
         tableList.map((item, index) => (
           <ul
@@ -78,14 +59,14 @@ export default function DB({ employees = [] }) {
             key={index}
           >
             <li>{index + 1}</li>
-            <li>{item.employeeNo}</li>
-            <li>{item.name}</li>
+            <li>{item.applicationDate}</li>
+            <li>{item.eventType}</li>
             <li>{item.targetName}</li>
-            <li>{item.data_level}</li>
-            <li>{item.data_date}</li>
-            <li>{item.phone}</li>
-            <li style={{ textAlign: "left" }}>{item.email}</li>
-            <li>{item.data_status}</li>
+            <li>{item.familyRelation}</li>
+            <li>{item.eventDate}</li>
+            <li>{item.requestedAmount}</li>
+            <li>{item.accountNumber}</li>
+            <li>{item.approvalStatus}</li>
             <li>{item.data_manage}</li>
           </ul>
         ))}

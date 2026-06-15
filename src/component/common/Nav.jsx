@@ -1,9 +1,11 @@
 "use client";
 import style from "./Nav.module.css";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Nav() {
   const [navInfo, setNavInfo] = useState();
+  const router = useRouter();
 
   useEffect(() => {
     const 이름 = localStorage.getItem("name");
@@ -23,9 +25,9 @@ export default function Nav() {
       </div>
       <div className={style.navRight}>
         <ul className={style.navRlist}>
-          <li>인사관리</li>
-          <li>근태관리</li>
-          <li>급여관리</li>
+          <li onClick={() => router.push("/info/appointment")}>인사관리</li>
+          <li onClick={() => router.push("/work/workday")}>근태관리</li>
+          <li onClick={() => router.push("/pay/payInfo")}>급여관리</li>
           <li>일용직관리</li>
         </ul>
       </div>
