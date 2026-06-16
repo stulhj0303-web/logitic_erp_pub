@@ -453,53 +453,6 @@ body {
   right: 152px;
 }
 
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-}
-
-.modal_head {
-  display: flex;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  background-color: #1b3a6b;
-  width: 600px;
-  padding: 0 20px;
-  height: 56px;
-  position: relative;
-}
-
-.modal_head img {
-  width: 18px;
-  height: 18px;
-  margin-top: 19px;
-  margin-right: 6px;
-}
-
-.modal_head p {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 56px;
-}
-
-.modal_head span {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  background-color: #2d5f9e;
-  border-radius: 6px;
-  color: white;
-  text-align: center;
-  line-height: 32px;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .modal_cont {
   padding: 16px;
   background-color: white;
@@ -525,6 +478,7 @@ body {
   width: 3px;
   height: 16px;
   background-color: #1b3a6b;
+  margin-top: 3px;
 }
 
 .modalC_head p {
@@ -566,7 +520,7 @@ body {
   background-color: white;
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  width: 278px;
+  width: 262px;
   color: #9ca3af;
   font-size: 13px;
   font-weight: 400;
@@ -628,4 +582,105 @@ body {
 .address_box {
   display: flex;
   gap: 8px;
+}
+
+.address_box input {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  height: 36px;
+  width: 160px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.address_box {
+  display: flex;
+}
+
+.address_box button {
+  display: flex;
+  gap: 5px;
+  background-color: #1b3a6b;
+  border-radius: 6px;
+  height: 36px;
+  padding: 0 14px;
+  color: white;
+  line-height: 36px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.address_box img {
+  width: 13px;
+  height: 13px;
+  margin-top: 12px;
+}
+
+.address_box2 {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 13px;
+  color: #9ca3af;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  line-height: 36px;
+}
+
+.modal_footer {
+  display: flex;
+  position: relative;
+}
+
+.modal_footer p {
+  display: flex;
+  gap: 5px;
+  color: #ef4444;
+}
+
+.modal_footer span {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.modal_footer_button {
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  right: 0;
+}
+
+.modal_footer_button button {
+  display: flex;
+  padding: 0 20px;
+  gap: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 36px;
+  line-height: 36px;
+}
+
+.modal_footer_button img {
+  width: 14px;
+  height: 14px;
+  margin-top: 10px;
+}
+
+.md_cancel {
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.md_cancel p {
+  color: #374151;
+}
+
+.md_save {
+  background-color: #1b3a6b;
+}
+
+.md_save p {
+  color: white;
 }

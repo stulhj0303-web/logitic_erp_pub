@@ -98,77 +98,78 @@ export default function page() {
               <li>
                 <p style={{ display: "flex", marginLeft: "60px" }}>
                   <img src="/Alert Circle (1).png" alt="" />
-                  이달 상실
+                  미신고 건수
                 </p>
-                <span>1명</span>
+                <span>1건</span>
                 <p
                   className={s.lighter}
                   style={{
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: "#E11D48",
+                    backgroundColor: "#FFF1F2",
+                    border: "1px solid #FECACA",
                     width: "112px",
                     borderRadius: "50px",
                     marginLeft: "42px",
                   }}
                 >
-                  신고완료 1 · 미신고 0
+                  신고기한 임박 확인
                 </p>
               </li>
               <li>
                 <p style={{ display: "flex", marginLeft: "60px" }}>
-                  <img src="/User Round Minus.png" alt="" />
-                  이달 상실
+                  <img src="/Clock (5).png" alt="" />
+                  신고기한
                 </p>
                 <span>1명</span>
                 <p
                   className={s.lighter}
                   style={{
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: "#CA8A04",
+                    backgroundColor: "#FEF9C3",
                     width: "112px",
                     borderRadius: "50px",
                     marginLeft: "42px",
                   }}
                 >
-                  신고완료 1 · 미신고 0
+                  2025.07.14 마감
                 </p>
               </li>
               <li>
-                <p style={{ display: "flex", marginLeft: "60px" }}>
-                  <img src="/User Round Minus.png" alt="" />
-                  이달 상실
+                <p style={{ display: "flex", marginLeft: "45px" }}>
+                  <img src="/Trending Up (3).png" alt="" />
+                  연간 누적 취득
                 </p>
                 <span>1명</span>
                 <p
                   className={s.lighter}
                   style={{
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: "#16A34A",
+                    backgroundColor: "#DCFCE7",
                     width: "112px",
                     borderRadius: "50px",
                     marginLeft: "42px",
                   }}
                 >
-                  신고완료 1 · 미신고 0
+                  2025년 1~7월 기준
                 </p>
               </li>
               <li>
-                <p style={{ display: "flex", marginLeft: "60px" }}>
-                  <img src="/User Round Minus.png" alt="" />
-                  이달 상실
+                <p style={{ display: "flex", marginLeft: "45px" }}>
+                  <img src="/Trending Down (1).png" alt="" />
+                  연간 누적 상실
                 </p>
-                <span>1명</span>
+                <span>4명</span>
                 <p
                   className={s.lighter}
                   style={{
-                    color: "#DC2626",
-                    backgroundColor: "#FEE2E2",
+                    color: "#7C3AED",
+                    backgroundColor: "#EDE9FE",
                     width: "112px",
                     borderRadius: "50px",
                     marginLeft: "42px",
                   }}
                 >
-                  신고완료 1 · 미신고 0
+                  2025년 1~7월 기준
                 </p>
               </li>
             </ul>
