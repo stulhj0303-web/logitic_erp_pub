@@ -7,7 +7,7 @@ export default function Aside({ dummy }) {
   return (
     <div className={style.peopleInfo}>
       {dummy.map((item, idx) => (
-        <ul key={idx} className={style.InfoList}>
+        <ul className={style.InfoList}>
           <li key={idx}>
             <img src={item.titleInfo.iconPath} /> {item.titleInfo.titleName}
           </li>
