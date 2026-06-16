@@ -75,14 +75,151 @@ export default function page() {
               headList={[
                 { headli1: "인사관리" },
                 { headli2: "인사정보" },
-                { headli3: "인사발령등록" },
+                { headli3: "인사정보등록" },
                 { headinfo: "직원의 인사정보를 등록하고 관리합니다." },
               ]}
             />
 
+            <div className={style.mainRtitle}>
+              <button className={style.download}>
+                <img
+                  src="
+                /Download.png"
+                />
+                엑셀 다운로드
+              </button>
+              <button className={style.plus}>
+                <img src="/Plus.png" />
+                신규등록
+              </button>
+            </div>
+
             <Search />
 
             <DB employees={employees} />
+
+            <div className={style.modal}>
+              <div className={style.modal_head}>
+                <img src="/User Round Plus.png" alt="" />
+                <p>인사정보등록</p>
+                <span>x</span>
+              </div>
+              <div className={style.modal_cont}>
+                <div className={style.modal_box}>
+                  <div className={style.modalC_head}>
+                    <span></span>
+                    <p>기본정보</p>
+                  </div>
+                  <div className={style.modalC_cont}>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        사원번호<p>*</p>
+                      </label>
+                      <div
+                        className={style.box_cont}
+                        style={{
+                          color: "#9CA3AF",
+                          backgroundColor: "#F9FAFB",
+                        }}
+                      >
+                        자동생성
+                      </div>
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        성명<p>*</p>
+                      </label>
+                      <input type="text" placeholder="홍길동" />
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        부서<p>*</p>
+                      </label>
+                      <select name="" id="">
+                        <option value="부서를 선택하세요">
+                          부서를 선택하세요
+                        </option>
+                        <option value="영업팀">영업팀</option>
+                        <option value="개발팀">개발팀</option>
+                      </select>
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        직급<p>*</p>
+                      </label>
+                      <select name="" id="">
+                        <option value="직급을 선택하세요">
+                          직급을 선택하세요
+                        </option>
+                        <option value="부장">부장</option>
+                        <option value="대리">대리</option>
+                        <option value="사원">사원</option>
+                      </select>
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        입사일<p>*</p>
+                      </label>
+                      <input type="date" />
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        재직상태<p>*</p>
+                      </label>
+                      <div className={style.modalC_radio}>
+                        <form>
+                          <div>
+                            <input type="radio" id="work" name="info" />
+                            <label for="work">재직중</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="vacation" name="info" />
+                            <label for="vacation">휴직중</label>
+                          </div>
+                          <div>
+                            <input type="radio" id="nowork" name="info" />
+                            <label for="nowork">퇴직</label>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={style.modal_box}>
+                  <div className={style.modalC_head}>
+                    <span></span>
+                    <p>연락처</p>
+                  </div>
+                  <div className={style.modalC_cont}>
+                    <div className={style.modalC_cont_box}>
+                      <label>
+                        휴대폰<p>*</p>
+                      </label>
+                      <input type="text" placeholder="010-0000-0000" />
+                    </div>
+                    <div className={style.modalC_cont_box}>
+                      <label>이메일</label>
+                      <input type="text" placeholder="example@company.com" />
+                    </div>
+                  </div>
+                </div>
+                <div className={style.modal_box}>
+                  <div className={style.modalC_head}>
+                    <span></span>
+                    <p>주소</p>
+                  </div>
+                  <div className={style.modalC_cont}>
+                    <div className={style.modalC_cont_box2}>
+                      <label>우편번호</label>
+                      <div className={style.address_box}>
+                        <input type="number" placeholder="우편번호" />
+                        <button className={style.address_search}></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
