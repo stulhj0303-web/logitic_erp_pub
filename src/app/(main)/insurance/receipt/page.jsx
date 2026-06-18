@@ -55,6 +55,26 @@ export default function page() {
                 },
               ]}
             />
+            <div className={s.mainRtitle}>
+              <button className={s.download}>
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button className={s.download}>
+                <img
+                  src="
+                /File Text (2).png"
+                />
+                신고서 일괄출력
+              </button>
+              <button className={s.plus}>
+                <img src="/Plus.png" />
+                취득/상실 등록
+              </button>
+            </div>
 
             <ul className={s.appoint_card}>
               <li>
@@ -173,6 +193,44 @@ export default function page() {
                 </p>
               </li>
             </ul>
+            <div className={s.receipt_search}>
+              <div className={s.search_box}>
+                <label>기간</label>
+                <input type="date" />
+                <p>~</p>
+                <input type="date" />
+              </div>
+              <div className={s.search_box}>
+                <div className={s.search_button}>
+                  <button className={s.month1}>1개월</button>
+                  <button className={s.month2}>3개월</button>
+                  <button className={s.month3}>올해</button>
+                </div>
+              </div>
+              <div className={s.search_box}>
+                <label>유형</label>
+                <div className={s.search_button}>
+                  <button className={s.month4}>전체</button>
+                  <button className={s.month5}>
+                    {" "}
+                    <span style={{ backgroundColor: "#16A34A" }}></span> 취득
+                  </button>
+                  <button className={s.month6}>
+                    {" "}
+                    <span style={{ backgroundColor: "#E11D48" }}></span> 상실
+                  </button>
+                </div>
+              </div>
+              <div className={s.search_box}>
+                <label>신고여부</label>
+                <select name="" id="">
+                  <option value="전체">전체</option>
+                  <option value="미신고">미신고</option>
+                  <option value="신고완료">신고완료</option>
+                </select>
+              </div>
+              <input type="text" placeholder="사원명 검색" />
+            </div>
           </div>
         </div>
       </div>

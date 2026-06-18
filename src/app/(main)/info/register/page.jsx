@@ -55,6 +55,20 @@ export default function page() {
               ]}
             />
 
+            <div className={style.mainRtitle}>
+              <button className={style.download}>
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button className={style.plus}>
+                <img src="/Plus.png" />
+                발령등록
+              </button>
+            </div>
+
             <Search1 />
 
             <FormInput />

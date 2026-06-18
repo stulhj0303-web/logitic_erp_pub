@@ -1,11 +1,15 @@
+"use client";
 import style from "./page.module.css";
 import Nav from "@/component/common/Nav";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
 import Appli from "@/component/common/Appli";
 import AppliDB from "@/component/common/AppliDB";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function page() {
+  const [downOpen, setDownOpen] = useState(false);
   return (
     <div className={style.container}>
       <Nav />
@@ -55,6 +59,25 @@ export default function page() {
               ]}
             />
 
+            <div className={style.mainRtitle}>
+              <button
+                className={style.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button className={style.plus}>
+                <img src="/Plus.png" />
+                신규신청
+              </button>
+            </div>
+
             <Appli />
 
             <div className={style.database}>
@@ -65,6 +88,26 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Dialog open={downOpen} onOpenChange={setDownOpen}>
+        <DialogContent className="w-[400px]" showCloseButton={false}>
+          <div className={style.pdf_cont}>
+            <span className={style.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={style.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={style.pdf_button}>
+              <button className={style.pdf_cancel}>취소</button>
+              <button className={style.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -17,9 +17,11 @@ import {
 export default function page() {
   const [keyword, setKeyword] = useState();
   const [employees, setEmployees] = useState([]);
+  const [registerInfo, setRegisterInfo] = useState();
 
   // 모달 오픈
   const [open, setOpen] = useState(false);
+  const [downOpen, setDownOpen] = useState(false);
 
   // 다음 주소 찾기 api
   const openPostcode = () => {
@@ -29,8 +31,14 @@ export default function page() {
       oncomplete(data) {
         // 여기에 주소 검색 완료시에 데이터 내려옴.
         // setter를 이용해 설정하자
-        console.log(data.zonecode);
-        console.log(data.address);
+        const 우편번호 = data?.zonecode;
+        const 주소 = data?.address;
+
+        setRegisterInfo((prev) => ({
+          ...prev,
+          postCode: 우편번호,
+          address: 주소,
+        }));
       },
     });
 
@@ -105,12 +113,17 @@ export default function page() {
             />
 
             <div className={style.mainRtitle}>
-              <button className={style.download}>
+              <button
+                className={style.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
                 <img
                   src="
                 /Download.png"
                 />
-                엑셀 다운로드
+                PDF 다운로드
               </button>
               <button
                 className={style.plus}
@@ -131,10 +144,35 @@ export default function page() {
       </div>
 
       {/*모달*/}
+      <Dialog open={downOpen} onOpenChange={setDownOpen}>
+        <DialogContent className="w-[400px]" showCloseButton={false}>
+          <div className={style.pdf_cont}>
+            <span className={style.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={style.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={style.pdf_button}>
+              <button className={style.pdf_cancel}>취소</button>
+              <button className={style.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="w-[600px]">
           <DialogHeader>
-            <DialogTitle>신규 등록</DialogTitle>
+            <DialogTitle>
+              <div className={style.modal_head}>
+                <img src="/User Round Plus.png" alt="" />
+                <p>인사정보등록</p>
+              </div>
+            </DialogTitle>
           </DialogHeader>
           <div>
             <div className={style.modal_cont}>
@@ -248,7 +286,11 @@ export default function page() {
                   <div className={style.modalC_cont_box2}>
                     <label>우편번호</label>
                     <div className={style.address_box}>
-                      <input type="number" placeholder="우편번호" />
+                      <input
+                        type="number"
+                        placeholder="우편번호"
+                        value={registerInfo?.postCode}
+                      />
                       <button
                         onClick={() => {
                           openPostcode();
@@ -262,9 +304,13 @@ export default function page() {
                   <div className={style.modalC_cont_box2}>
                     <label>도로명주소</label>
                     <div className={style.address_box}>
-                      <div className={style.address_box2}>
-                        주소검색 후 자동입력
-                      </div>
+                      <input
+                        type="text"
+                        className={style.address_box2}
+                        placeholder="주소검색 후 자동입력"
+                        value={registerInfo?.address}
+                        style={{ width: "100%" }}
+                      />
                     </div>
                   </div>
                   <div className={style.modalC_cont_box2}>

@@ -78,12 +78,7 @@ function DialogHeader({ className, ...props }) {
       data-slot="dialog-header"
       className={cn("flex flex-col gap-2", className)}
       {...props}
-    >
-      <div className={style.modal_head}>
-        <img src="/User Round Plus.png" alt="" />
-        <p>인사정보등록</p>
-      </div>
-    </div>
+    ></div>
   );
 }
 
