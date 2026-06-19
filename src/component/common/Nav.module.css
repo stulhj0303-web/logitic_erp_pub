@@ -1,13 +1,11 @@
 .container {
-  margin: 0 auto;
-  width: 100%;
   background-color: #f1f5f9;
 }
 
 .nav {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 1440px;
   height: 56px;
   position: relative;
   background-color: #1b3a6b;

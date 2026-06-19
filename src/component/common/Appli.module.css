@@ -288,6 +288,40 @@
   font-size: 13px;
 }
 
+.info_file_cont {
+  margin-top: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+}
+
+.info_file_cont img {
+  width: 15px;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.info_file_name {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info_file_name p {
+  font-size: 13px;
+}
+
+.info_file_name span {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.file_delete {
+  display: flex;
+}
+
 .add_contents {
   margin-top: 20px;
   display: flex;

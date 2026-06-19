@@ -1,60 +1,60 @@
-.container{
-    height: 56px;
-    background-color: #1B3A6B;
+.container {
+  height: 56px;
+  background-color: #1b3a6b;
 }
 
-.nav{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 56px;
-    position: relative;
-    background-color: #1B3A6B;
-    color: white;
-    font-size: 14px;
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 56px;
+  position: relative;
+  background-color: #1b3a6b;
+  color: white;
+  font-size: 14px;
 }
 
-.navLeft{
-    position: absolute;
-    width: 210px;
-    height: 56px;
-    display: flex;
-    line-height: 56px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    padding-left: 30px;
+.navLeft {
+  position: absolute;
+  width: 210px;
+  height: 56px;
+  display: flex;
+  line-height: 56px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 30px;
 }
 
-.navLeft img{
-    width: 18px;
-    height: 18px;
-    margin-top: 18px;
-    margin-left: 5px;
-    margin-right: 7px;
+.navLeft img {
+  width: 18px;
+  height: 18px;
+  margin-top: 18px;
+  margin-left: 5px;
+  margin-right: 7px;
 }
 
-.navLeft span{
-    font-size: 16px;
-    color: white;
+.navLeft span {
+  font-size: 16px;
+  color: white;
 }
 
-.navRight{
-    width: 25%;
-    position: absolute;
-    left: 210px;
-    line-height: 56px;
+.navRight {
+  width: 25%;
+  position: absolute;
+  left: 450px;
+  line-height: 56px;
 }
 
-.navRlist{
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-    color: #93C5FD;
+.navRlist {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  color: #93c5fd;
 }
 
-.navRlist li{
-    text-align: center;
-    font-weight: 400;
-    width: 96px;
+.navRlist li {
+  text-align: center;
+  font-weight: 400;
+  width: 96px;
 }

@@ -1,10 +1,22 @@
+"use client";
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function page() {
   // const [date, setDate] = useState(new Date());
+
+  const [open, setOpen] = useState(false);
+  const [downOpen, setDownOpen] = useState(false);
+  const [registerOpen, setRegisterOpen] = useState(false);
 
   return (
     <div className={s.container}>
@@ -56,23 +68,38 @@ export default function page() {
               ]}
             />
             <div className={s.mainRtitle}>
-              <button className={s.download}>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
                 <img
                   src="
                 /Download.png"
                 />
                 PDF 다운로드
               </button>
-              <button className={s.download}>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
                 <img
                   src="
                 /File Text (2).png"
                 />
                 신고서 일괄출력
               </button>
-              <button className={s.plus}>
+              <button
+                className={s.plus}
+                onClick={() => {
+                  setRegisterOpen(true);
+                }}
+              >
                 <img src="/Plus.png" />
-                취득/상실 등록
+                신규등록
               </button>
             </div>
 
@@ -234,6 +261,190 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Dialog open={downOpen} onOpenChange={setDownOpen}>
+        <DialogContent className="w-[400px]" showCloseButton={false}>
+          <div className={s.pdf_cont}>
+            <span className={s.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={s.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={s.pdf_button}>
+              <button className={s.pdf_cancel}>취소</button>
+              <button className={s.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={registerOpen} onOpenChange={setRegisterOpen}>
+        <DialogContent className="w-[640px]">
+          <DialogHeader>
+            <DialogTitle>
+              <div className={s.register_head}>
+                <img src="/User Plus (1).png" alt="" />
+                <p>급여정보등록</p>
+                <div className={s.head_status}>
+                  <span className={s.head_bg}>1</span>
+                  <span>사원 검색</span>
+                  <img src="/Chevron Right.png" alt="" />
+                  <span
+                    className={s.head_bg}
+                    style={{ backgroundColor: "#D1D5DB", color: "#6B7280" }}
+                  >
+                    2
+                  </span>
+                  <span style={{ color: "#6B7280" }}>급여 입력</span>
+                </div>
+              </div>
+            </DialogTitle>
+          </DialogHeader>
+          <div className={s.register_cont}>
+            <div className={s.register_cont_box}>
+              <div className={s.cont_box_head}>
+                <span></span>
+                <p>신규입사자 검색</p>
+              </div>
+              <div className={s.cont_box_input}>
+                <select>
+                  <option value="전체 부서">전체 부서</option>
+                  <option value="개발팀">개발팀</option>
+                  <option value="영업팀">영업팀</option>
+                  <option value="디자인팀">디자인팀</option>
+                </select>
+                <input type="text" placeholder="사원명 또는 사번 입력" />
+                <button className={s.box_search_btn}>
+                  <img src="/Search (1).png" alt="" />
+                  <span>검색</span>
+                </button>
+              </div>
+              <ul className={s.cont_box_chart}>
+                <li>선택</li>
+                <li>사번</li>
+                <li>사원명</li>
+                <li>부서</li>
+                <li>직급</li>
+                <li>입사일</li>
+              </ul>
+            </div>
+            <span className={s.hr}></span>
+            <div className={s.register_cont_box}>
+              <div className={s.cont_box_head} style={{ position: "relative" }}>
+                <span></span>
+                <p>급여 정보 입력</p>
+                <div className={s.box_head_user}>
+                  <span className={s.user_span}>이</span>
+                  <p>이수연</p>
+                  <p>·</p>
+                  <p>인사팀</p>
+                  <img src="/Circle Check (1).png" alt="" />
+                </div>
+              </div>
+              <div className={s.user_cont}>
+                <div className={s.user_cont_box}>
+                  <label>
+                    기본급 <p style={{ color: "#EF4444" }}>*</p>
+                  </label>
+                  <input type="text" />
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>
+                    직급수당 <p style={{ color: "#EF4444" }}>*</p>
+                  </label>
+                  <input type="text" />
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>식대</label>
+                  <input type="text" />
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>교통비</label>
+                  <input type="text" />
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>지급방식</label>
+                  <select>
+                    <option value="계좌이체">계좌이체</option>
+                  </select>
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>
+                    급여 지급일 <p style={{ color: "#EF4444" }}>*</p>
+                  </label>
+                  <select>
+                    <option value="매월 25일">매월 25일</option>
+                  </select>
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>국민연금</label>
+                  <div className={s.user_cont_auto}>
+                    <p>126,000</p>
+                    <span>자동</span>
+                  </div>
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>건강보험</label>
+                  <div className={s.user_cont_auto}>
+                    <p>98,210</p>
+                    <span>자동</span>
+                  </div>
+                </div>
+                <div className={s.user_cont_box}>
+                  <label>소득세</label>
+                  <div className={s.user_cont_auto}>
+                    <p>52,300</p>
+                    <span>자동</span>
+                  </div>
+                </div>
+                <div className={s.pay_info_result}>
+                  <div className={s.info_result_text}>
+                    <div className={s.info_result_text_sum}>
+                      <span>총 지급액</span>
+                      <p>3,200,000원</p>
+                    </div>
+                    <img src="/Minus Icon.png" alt="" />
+                    <div className={s.info_result_text_sum}>
+                      <span>총 공제액</span>
+                      <p style={{ color: "#374151" }}>276,510원</p>
+                    </div>
+                    <img src="/Equal Icon.png" alt="" />
+                    <div className={s.info_result_text_sum}>
+                      <span>실 수령액</span>
+                      <p style={{ color: "#1B3A6B", fontSize: "15px" }}>
+                        2,923,490원
+                      </p>
+                    </div>
+                  </div>
+                  <div className={s.info_result_info}>
+                    <img src="/Info (4).png" alt="" />
+                    <span>공제액은 자동 계산됩니다.</span>
+                  </div>
+                </div>
+                <div className={s.register_footer}>
+                  <div className={s.register_footer_text}>
+                    <img src="/Info1.png" alt="" />
+                    <span>등록 후 급여 대장에 자동 반영됩니다.</span>
+                  </div>
+                  <div className={s.register_footer_button}>
+                    <button className={s.register_cancel}>
+                      <img src="/X.png" alt="" />
+                      <span>취소</span>
+                    </button>
+                    <button className={s.register_select}>
+                      <img src="/User Plus.png" alt="" />
+                      <span style={{ fontWeight: "bold" }}>급여정보 등록</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -4,7 +4,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 100%;
+  width: 1440px;
   background-color: #f1f5f9;
 }
 
@@ -22,6 +22,7 @@ body {
 .mainContainer {
   margin: 0 auto;
   position: relative;
+  width: 100%;
 }
 
 .mainRtitle {

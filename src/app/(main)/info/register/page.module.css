@@ -4,7 +4,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 100%;
+  width: 1440px;
   background-color: #f1f5f9;
 }
 
@@ -165,4 +165,76 @@ body {
   position: absolute;
   display: flex;
   right: 0;
+}
+
+.pdf_cont {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf_cont span.pdf_img {
+  width: 48px;
+  height: 48px;
+  background-color: #eff6ff;
+  display: block;
+  border-radius: 12px;
+  position: relative;
+  margin: 10px 0 10px 152px;
+}
+
+.pdf_img img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pdf_text p {
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.pdf_text span {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.pdf_button {
+  margin-top: 30px;
+  display: flex;
+}
+
+.pdf_button button {
+  border-radius: 8px;
+  height: 44px;
+  width: 180px;
+}
+
+.pdf_cancel {
+  border: 1px solid #d1d5db;
+}
+
+.pdf_select {
+  background-color: #2563eb;
+  color: white;
+}
+
+.modal_head {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.modal_head img {
+  width: 18px;
+  height: 18px;
+}
+
+.modal_head p {
+  font-size: 16px;
+  font-weight: 700;
 }

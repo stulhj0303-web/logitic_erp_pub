@@ -30,10 +30,7 @@ export default function page() {
                 iconPath: "/Heart Handshake.png",
                 titleName: "경조비관리",
               },
-              submenuList: [
-                { name: "경조비신청", path: "/money/application" },
-                { name: "경조비신청현황" },
-              ],
+              submenuList: [{ name: "경조비신청", path: "/money/application" }],
             },
             {
               titleInfo: {

@@ -2,12 +2,31 @@
 
 import s from "./Appli.module.css";
 import baseApi from "@/api/baseApi";
-import { useEffect, useState } from "react";
+import axios from "axios";
+import { useEffect, useState, useRef } from "react";
+import { toast } from "sonner";
 
 export default function Appli() {
   const [appliInfo, setAppliInfo] = useState();
   const [eventType, setEventType] = useState("본인결혼");
   const [eventTargetInfo, setEventTargetInfo] = useState("");
+
+  const fileUpload = (fileList) => {
+    const url = "http://localhost:33000/api/v1/files/upload";
+    const token = localStorage.getItem("accessToken");
+
+    const 파일 = fileList[0];
+    const formData = new FormData();
+    formData.append("file", 파일);
+    formData.append("refType", "1");
+    axios.post(url, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
+
+  const fileUploaderRef = useRef(null);
 
   const 경조비신청리스트조회 = async () => {
     const token = localStorage.getItem("accessToken");
@@ -18,6 +37,7 @@ export default function Appli() {
     });
   };
 
+  toast("테스트 토스트", { position: "top-center" });
   useEffect(() => {
     경조비신청리스트조회();
   }, []);
@@ -408,9 +428,33 @@ export default function Appli() {
               <span>청첩장·출생증명서 등 관련 서류를 첨부해 주세요</span>
               <p>PDF, JPG, PNG · 최대 10MB · 파일 3개까지</p>
             </div>
-            <button className={s.selectfile}>
+            <input
+              type="file"
+              hidden
+              ref={fileUploaderRef}
+              onChange={(e) => {
+                fileUpload(e.target.files);
+              }}
+            />
+            <button
+              className={s.selectfile}
+              onClick={() => {
+                fileUploaderRef.current.click();
+              }}
+            >
               <img src="/Upload.png" alt="" />
               <p>파일 선택</p>
+            </button>
+          </div>
+          <div className={s.info_file_cont}>
+            <img src="/File Text (3).png" alt="" />
+            <div className={s.info_file_name}>
+              <p>청첩장_이영희.pdf</p>
+              <span>238 KB · 업로드 완료</span>
+            </div>
+            <button className={s.file_delete}>
+              <img src="/X (1).png" alt="" />
+              <p>삭제</p>
             </button>
           </div>
           <div className={s.add_contents}>

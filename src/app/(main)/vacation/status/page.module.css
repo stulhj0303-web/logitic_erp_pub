@@ -472,11 +472,11 @@ body {
 }
 
 .status_sum li:first-child {
-  width: 262px;
+  width: 332px;
   background-color: #eff4ff;
   display: flex;
   border-right: 1px solid #bfdbfe;
-  padding-left: 170px;
+  padding-left: 240px;
 }
 
 .status_sum li:nth-child(2) {
@@ -527,7 +527,7 @@ body {
 }
 
 .status_sum li:nth-child(9) {
-  width: 302px;
+  width: 232px;
   background-color: #dcfce7;
   border-right: 1px solid #86efac;
   color: #15803d;
