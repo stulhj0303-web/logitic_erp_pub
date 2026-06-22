@@ -89,7 +89,7 @@ export default function AppliDB() {
         ))}
 
       <ul className={style.maindbListlast}>
-        <li>총 5건</li>
+        <li>총 {tableList.length}건</li>
         <li>
           <img src="/Chevron Left.png" alt="" />
         </li>

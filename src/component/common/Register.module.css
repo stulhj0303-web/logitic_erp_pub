@@ -1,47 +1,77 @@
-.register_list{
-    padding: 0 16px;
-    background-color: #F1F5F9;
-    text-align: center;
-    line-height: 40px;
-    height: 40px;
-    display: flex;
-    color: #6B7280;
-    font-weight: bold;
-    font-size: 12px;
+.register_list {
+  padding: 0 16px;
+  background-color: #f1f5f9;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  display: flex;
+  color: #6b7280;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.register_list li:first-child{
-    width: 44px;
+.register_list li:first-child {
+  width: 44px;
 }
 
-.register_list li:nth-child(2){
-    width: 100px;
+.register_list li:nth-child(2) {
+  width: 100px;
 }
 
-.register_list li:nth-child(3){
-    width: 90px;
+.register_list li:nth-child(3) {
+  width: 90px;
 }
 
-.register_list li:nth-child(4){
-    width: 70px;
+.register_list li:nth-child(4) {
+  width: 70px;
 }
 
-.register_list li:nth-child(5){
-    width: 80px;
+.register_list li:nth-child(5) {
+  width: 80px;
 }
 
-.register_list li:nth-child(6), .register_list li:nth-child(7){
-    width: 160px;
+.register_list li:nth-child(6),
+.register_list li:nth-child(7) {
+  width: 160px;
 }
 
-.register_list li:nth-child(8){
-    width: 100px;
+.register_list li:nth-child(8) {
+  width: 100px;
 }
 
-.register_list li:nth-child(9){
-    width: 80px;
+.register_list li:nth-child(9) {
+  width: 80px;
 }
 
-.register_list li:nth-child(10){
-    width: 274px;
+.register_list li:nth-child(10) {
+  width: 274px;
+  position: relative;
+}
+
+.register_btn {
+  display: flex;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register_btn button {
+  padding: 0 10px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.register_edit {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.register_delete {
+  background-color: #fff1f2;
+  color: #e11d48;
 }

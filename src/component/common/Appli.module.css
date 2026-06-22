@@ -294,6 +294,7 @@
   border-radius: 6px;
   padding: 8px 12px;
   display: flex;
+  position: relative;
 }
 
 .info_file_cont img {
@@ -320,6 +321,20 @@
 
 .file_delete {
   display: flex;
+  gap: 4px;
+  position: absolute;
+  right: 12px;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 42px;
+  cursor: pointer;
+}
+
+.file_delete img {
+  width: 12px;
+  height: 12px;
+  margin-top: 14px;
 }
 
 .add_contents {

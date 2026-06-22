@@ -125,21 +125,7 @@ export default function FormInput() {
           <span>총 3건</span>
         </div>
 
-        <Register
-          register={[
-            {
-              data_num: "사원번호",
-              data_name: "성명",
-              data_dept: "부서",
-              data_level: "직급",
-              data_date: "입사일",
-              data_tel: "연락처",
-              data_email: "이메일",
-              data_status: "재직상태",
-              data_manage: "관리",
-            },
-          ]}
-        />
+        <Register />
       </div>
     </div>
   );

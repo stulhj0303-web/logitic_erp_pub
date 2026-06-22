@@ -8,6 +8,7 @@ import { toast } from "sonner";
 
 export default function Appli() {
   const [appliInfo, setAppliInfo] = useState();
+  const [fileInfo, setFileInfo] = useState(null);
   const [eventType, setEventType] = useState("본인결혼");
   const [eventTargetInfo, setEventTargetInfo] = useState("");
 
@@ -37,9 +38,33 @@ export default function Appli() {
     });
   };
 
+  // const 경조비파일업로드 = async () => {
+  //   const token = localStorage.getItem("accessToken");
+  //   const formData = new FormData();
+
+  //   formData.append("savedFileName", setFileInfo);
+
+  //   const res = await baseApi.post(
+  //     "/api/v1/files/upload",
+  //     {
+  //       savedFileDate: fileInfo?.savedFileDate,
+  //       savedFileExt: fileInfo?.savedFileExt,
+  //       savedFileId: fileInfo?.savedFileId,
+  //       savedFileName: fileInfo?.savedFileName,
+  //       savedFileSize: fileInfo?.savedFileSize,
+  //     },
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     },
+  //   );
+  // };
+
   toast("테스트 토스트", { position: "top-center" });
   useEffect(() => {
     경조비신청리스트조회();
+    // 경조비파일업로드()
   }, []);
 
   useEffect(() => {
@@ -197,59 +222,149 @@ export default function Appli() {
               onClick={() => {
                 setEventType("본인결혼");
               }}
+              style={{
+                backgroundColor: eventType === "본인결혼" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "본인결혼"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+              }}
             >
-              <img src="/Heart.png" alt="" />
-              <p style={{ color: "white" }}>본인결혼</p>
+              <img
+                src={eventType === "본인결혼" ? "/Heart.png" : "/Heart (1).png"}
+                alt=""
+              />
+              <p
+                style={{
+                  color: eventType === "본인결혼" ? "white" : "#6B7280",
+                  fontWeight: eventType === "본인결혼" ? "bold" : "500",
+                }}
+              >
+                본인결혼
+              </p>
             </button>
             <button
-              style={{ border: "1px solid #D1D5DB" }}
+              style={{
+                backgroundColor: eventType === "자녀결혼" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "자녀결혼"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+                borderLeft: "0",
+              }}
               onClick={() => {
                 setEventType("자녀결혼");
               }}
             >
-              <img src="/Heart (1).png" alt="" />
-              <p>자녀결혼</p>
+              <img
+                src={eventType === "자녀결혼" ? "/Heart.png" : "/Heart (1).png"}
+                alt=""
+              />
+              <p
+                style={{
+                  color: eventType === "자녀결혼" ? "white" : "#6B7280",
+                  fontWeight: eventType === "자녀결혼" ? "bold" : "500",
+                }}
+              >
+                자녀결혼
+              </p>
             </button>
             <button
-              style={{ border: "1px solid #D1D5DB", borderLeft: "0" }}
+              style={{
+                backgroundColor: eventType === "출산" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "출산"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+              }}
               onClick={() => {
                 setEventType("출산");
               }}
             >
               <img src="/Baby.png" alt="" />
-              <p>출산</p>
+              <p
+                style={{
+                  color: eventType === "출산" ? "white" : "#6B7280",
+                  fontWeight: eventType === "출산" ? "bold" : "500",
+                }}
+              >
+                출산
+              </p>
             </button>
             <button
-              style={{ border: "1px solid #D1D5DB", borderLeft: "0" }}
+              style={{
+                backgroundColor: eventType === "부모사망" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "부모사망"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+              }}
               onClick={() => {
                 setEventType("부모사망");
               }}
             >
               <img src="/Flower 2.png" alt="" />
-              <p>부모사망</p>
+              <p
+                style={{
+                  color: eventType === "부모사망" ? "white" : "#6B7280",
+                  fontWeight: eventType === "부모사망" ? "bold" : "500",
+                }}
+              >
+                부모사망
+              </p>
             </button>
             <button
-              style={{ border: "1px solid #D1D5DB", borderLeft: "0" }}
+              style={{
+                backgroundColor:
+                  eventType === "배우자사망" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "배우자사망"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+              }}
               onClick={() => {
                 setEventType("배우자사망");
               }}
             >
               <img src="/Flower 2.png" alt="" />
-              <p>배우자사망</p>
+              <p
+                style={{
+                  color: eventType === "배우자사망" ? "white" : "#6B7280",
+                  fontWeight: eventType === "배우자사망" ? "bold" : "500",
+                }}
+              >
+                배우자사망
+              </p>
             </button>
             <button
-              style={{ border: "1px solid #D1D5DB", borderLeft: "0" }}
+              style={{
+                backgroundColor: eventType === "부모회갑" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "부모회갑"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
+              }}
               onClick={() => {
                 setEventType("부모회갑");
               }}
             >
               <img src="/Cake Slice.png" alt="" />
-              <p>부모회갑</p>
+              <p
+                style={{
+                  color: eventType === "부모회갑" ? "white" : "#6B7280",
+                  fontWeight: eventType === "부모회갑" ? "bold" : "500",
+                }}
+              >
+                부모회갑
+              </p>
             </button>
             <button
               style={{
-                border: "1px solid #D1D5DB",
-                borderLeft: "0",
+                backgroundColor: eventType === "기타" ? "#1B3A6B" : "white",
+                border:
+                  eventType === "기타"
+                    ? "1px solid #1B3A6B"
+                    : "1px solid #D1D5DB",
                 borderTopRightRadius: "6px",
                 borderBottomRightRadius: "6px",
               }}
@@ -258,7 +373,14 @@ export default function Appli() {
               }}
             >
               <img src="/Ellipsis.png" alt="" />
-              <p>기타</p>
+              <p
+                style={{
+                  color: eventType === "기타" ? "white" : "#6B7280",
+                  fontWeight: eventType === "기타" ? "bold" : "500",
+                }}
+              >
+                기타
+              </p>
             </button>
           </div>
 
