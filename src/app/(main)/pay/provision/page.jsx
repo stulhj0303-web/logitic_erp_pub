@@ -1,10 +1,21 @@
+"use client";
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
+import { useEffect, useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function page() {
   // const [date, setDate] = useState(new Date());
+
+  const [open, setOpen] = useState(false);
+  const [downOpen, setDownOpen] = useState(false);
 
   return (
     <div className={s.container}>
@@ -51,6 +62,37 @@ export default function page() {
                 { headinfo: "월별 직원 급여 지급 내역을 관리하고 확정합니다." },
               ]}
             />
+
+            <div className={s.mainRtitle}>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /Printer (3).png"
+                />
+                급여명세서 출력
+              </button>
+              <button className={s.plus}>
+                <img src="/Check Check (3).png" />
+                급여확정
+              </button>
+            </div>
 
             <ul className={s.appoint_card}>
               <li>
@@ -228,6 +270,46 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Dialog open={downOpen} onOpenChange={setDownOpen}>
+        <DialogContent className="w-[400px]" showCloseButton={false}>
+          <div className={s.pdf_cont}>
+            <span className={s.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={s.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={s.pdf_button}>
+              <button className={s.pdf_cancel}>취소</button>
+              <button className={s.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="w-[400px]">
+          <div className={s.pdf_cont}>
+            <span className={s.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={s.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={s.pdf_button}>
+              <button className={s.pdf_cancel}>취소</button>
+              <button className={s.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

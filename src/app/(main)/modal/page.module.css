@@ -1,204 +1,52 @@
-.empCard_container {
-  width: 700px;
-  border-radius: 12px;
-  background-color: aliceblue;
+.modal {
+  width: 560px;
 }
 
-.empCard_header {
-  padding: 0 20px;
-  height: 54px;
+.modal_header {
   background-color: #1b3a6b;
+  height: 50px;
+  padding: 0 20px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   display: flex;
   position: relative;
 }
 
-.empCard_header img {
+.modal_header img {
   width: 18px;
   height: 18px;
-  margin-top: 17px;
-  margin-right: 8px;
+  margin-top: 15px;
+  margin-right: 6px;
 }
 
-.empCard_header p {
+.modal_header_text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7px;
+}
+
+.modal_header_text span {
+  font-size: 15px;
   color: white;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 54px;
-  margin-right: 8px;
 }
 
-.empCard_header span {
-  font-size: 11px;
-  font-weight: 500;
+.modal_header_text p {
+  font-size: 10px;
+  color: #60a5fa;
+  margin-top: -3px;
+}
+
+.modal_header_date {
+  background-color: #2d5f9e;
   color: #93c5fd;
+  font-size: 11px;
   padding: 0 10px;
   height: 20px;
-  border-radius: 50px;
-  background-color: #2d5f9e;
   line-height: 20px;
-  margin-top: 16px;
-}
-
-.empCard_header_span {
+  border-radius: 50px;
   position: absolute;
   right: 50px;
-  background-color: #2d5f9e;
-  border-radius: 6px;
-  display: flex;
-  height: 30px;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 10px;
-}
-
-.empCard_header_span img {
-  width: 13px;
-  height: 13px;
-  margin-top: 8px;
-}
-
-.empCard_header_span p {
-  line-height: 30px;
-  font-size: 12px;
-  color: #93c5fd;
-  font-weight: 500;
-}
-
-.empCard_contents {
-  background-color: white;
-}
-
-.empCard_user {
-  padding: 20px;
-  background-color: #f8fafc;
-  display: flex;
-  gap: 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.empCard_user_photo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.empCard_user_img {
-  background-color: #e2e8f0;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  width: 88px;
-  height: 100px;
-  position: relative;
-}
-
-.empCard_user_img img {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  left: 50%;
-  top: 23px;
-  transform: translateX(-50%);
-}
-
-.empCard_user_img p {
-  left: 50%;
-  top: 60px;
-  transform: translateX(-50%);
-  position: absolute;
-  color: #94a3b8;
-  font-size: 11px;
-}
-
-.empCard_user_btn {
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid #d1d5db;
-  height: 20px;
-  display: flex;
-  gap: 4px;
-  border-radius: 4px;
-  width: 55px;
-  margin-left: 16px;
-}
-
-.empCard_user_btn p {
-  color: #6b7280;
-  font-size: 11px;
-  line-height: 20px;
-}
-
-.empCard_user_btn img {
-  width: 10px;
-  height: 10px;
-  margin-top: 4px;
-  margin-left: 6px;
-}
-
-.empCard_user_info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.empCard_user_cont {
-  display: flex;
-}
-
-.empCard_user_cont li {
-  padding-right: 16px;
-  padding-left: 16px;
-  border-right: 1px solid #e5e7eb;
-  width: 148px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: flex-start;
-}
-
-.empCard_user_cont li:first-child {
-  padding-left: 0;
-}
-
-.empCard_user_cont li:last-child {
-  width: 104px;
-  border-right: none;
-}
-
-.empCard_user_cont label {
-  font-size: 11px;
-  color: #9ca3af;
-  font-weight: 500;
-}
-
-.empCard_user_cont li p {
-  font-weight: bold;
-  font-size: 14px;
-}
-
-span.hr {
-  width: 550px;
-  height: 1px;
-  background-color: #e5e7eb;
-  display: block;
-}
-
-.empCard_tab_header {
-  display: flex;
-}
-
-.empCard_tab_header li {
-  padding: 0 20px;
-  height: 44px;
-  line-height: 44px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.empCard_tab_cont {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }

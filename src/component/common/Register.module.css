@@ -64,6 +64,7 @@
   font-size: 12px;
   font-weight: 500;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .register_edit {
@@ -74,4 +75,452 @@
 .register_delete {
   background-color: #fff1f2;
   color: #e11d48;
+}
+
+.empCard_header {
+  padding: 0 20px;
+  height: 54px;
+  background-color: #1b3a6b;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  position: relative;
+  width: 700px;
+  margin-left: -16px;
+  margin-top: -16px;
+}
+
+.empCard_header img {
+  width: 18px;
+  height: 18px;
+  margin-top: 17px;
+  margin-right: 8px;
+}
+
+.empCard_header p {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 54px;
+  margin-right: 8px;
+}
+
+.empCard_header span {
+  font-size: 11px;
+  font-weight: 500;
+  color: #93c5fd;
+  padding: 0 10px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #2d5f9e;
+  line-height: 20px;
+  margin-top: 16px;
+}
+
+.empCard_header_span {
+  position: absolute;
+  right: 50px;
+  background-color: #2d5f9e;
+  border-radius: 6px;
+  display: flex;
+  height: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.empCard_header_span img {
+  width: 13px;
+  height: 13px;
+  margin-top: 8px;
+}
+
+.empCard_header_span p {
+  line-height: 30px;
+  font-size: 12px;
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.empCard_contents {
+  background-color: white;
+  width: 700px;
+  margin-left: -16px;
+}
+
+.empCard_user {
+  padding: 20px;
+  background-color: #f8fafc;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.empCard_user_photo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empCard_user_img {
+  background-color: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 88px;
+  height: 100px;
+  position: relative;
+}
+
+.empCard_user_img img {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 23px;
+  transform: translateX(-50%);
+}
+
+.empCard_user_img p {
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  position: absolute;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.empCard_user_btn {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  height: 20px;
+  display: flex;
+  gap: 4px;
+  border-radius: 4px;
+  width: 55px;
+  margin-left: 16px;
+}
+
+.empCard_user_btn p {
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.empCard_user_btn img {
+  width: 10px;
+  height: 10px;
+  margin-top: 4px;
+  margin-left: 6px;
+}
+
+.empCard_user_info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empCard_user_cont {
+  display: flex;
+}
+
+.empCard_user_cont li {
+  padding-right: 16px;
+  padding-left: 16px;
+  border-right: 1px solid #e5e7eb;
+  width: 148px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.empCard_user_cont li:first-child {
+  padding-left: 0;
+}
+
+.empCard_user_cont li:last-child {
+  width: 104px;
+  border-right: none;
+}
+
+.empCard_user_cont label {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.empCard_user_cont li p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+span.hr {
+  width: 550px;
+  height: 1px;
+  background-color: #e5e7eb;
+  display: block;
+}
+
+.empCard_tab_header {
+  display: flex;
+}
+
+.empCard_tab_header li {
+  padding: 0 20px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.empCard_tab_cont {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tab_head {
+  display: flex;
+  gap: 8px;
+}
+
+.tab_head span {
+  width: 3px;
+  height: 14px;
+  background-color: #1b3a6b;
+  margin-top: 2px;
+}
+
+.tab_head p {
+  font-size: 13px;
+  color: #1b3a6b;
+  font-weight: bold;
+}
+
+.tab_head_span {
+  position: absolute;
+  right: 0;
+  background-color: #eff6ff;
+  border-radius: 50px;
+  padding: 0 10px;
+  height: 20px;
+  line-height: 20px;
+}
+
+.tab_head_span p {
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.tab_contents {
+  display: flex;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  padding: 0 12px;
+  font-size: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tab_contents li:first-child {
+  width: 100px;
+}
+
+.tab_contents li:nth-child(2) {
+  width: 80px;
+}
+
+.tab_contents li:nth-child(3) {
+  width: 180px;
+  position: relative;
+}
+
+.tab_contents li:nth-child(4) {
+  width: 156px;
+  position: relative;
+}
+
+.tab_contents li:nth-child(5) {
+  width: 120px;
+}
+
+.tab_contents_text {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tab_work {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tab_work li {
+  width: 103.33px;
+  height: 68px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.tab_work span {
+  font-weight: bold;
+  font-size: 22px;
+  position: absolute;
+  left: 50%;
+  top: 7px;
+  transform: translateX(-50%);
+}
+
+.tab_work p {
+  color: #6b7280;
+  font-size: 11px;
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  transform: translateX(-50%);
+}
+
+.tab_money {
+  display: flex;
+  font-size: 12px;
+  padding: 0 12px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.tab_money li:first-child {
+  width: 80px;
+}
+
+.tab_money li:nth-child(2) {
+  width: 246px;
+}
+
+.tab_money li:nth-child(3),
+.tab_money li:nth-child(4) {
+  width: 100px;
+}
+
+.tab_money li:nth-child(5) {
+  width: 110px;
+}
+
+.tab_career {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.tab_career_receipt {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.career_receipt_head {
+  display: flex;
+  gap: 6px;
+}
+
+.career_receipt_head img {
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+}
+
+.career_receipt_head p {
+  font-size: 12px;
+  color: #374151;
+  font-weight: bold;
+}
+
+.career_receipt_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.career_receipt_list li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  height: 52px;
+}
+
+.career_receipt_list li span {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.receipt_text_box {
+  display: flex;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.career_receipt_text {
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+  margin-top: -2px;
+}
+
+.empCard_footer {
+  width: 700px;
+  height: 56px;
+  padding: 0 20px;
+  background-color: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -16px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.empCard_footer_text {
+  display: flex;
+  line-height: 56px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.empCard_footer_text img {
+  width: 12px;
+  height: 12px;
+  margin-top: 21px;
+  margin-right: 5px;
+}
+
+.card_close {
+  display: flex;
+  background-color: #1b3a6b;
+  border-radius: 6px;
+  padding: 0 22px;
+  height: 36px;
+  line-height: 36px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.card_close img {
+  width: 13px;
+  height: 13px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.card_close p {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
 }

@@ -1,10 +1,14 @@
+"use client";
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
 import WorkBox from "@/component/common/WorkBox";
+import { useState } from "react";
 
 export default function page() {
+  const [eventTab, setEventTab] = useState("출근");
+  const [restType, setRestType] = useState("종일");
   return (
     <div className={s.container}>
       <Nav />
@@ -122,25 +126,116 @@ export default function page() {
                       근태 유형<p style={{ color: "#EF4444" }}>*</p>
                     </label>
                     <div className={s.type_btn}>
-                      <button className={s.btn1}>
-                        <img src="/Check Check.png" alt="" />
-                        <span>출근</span>
+                      <button
+                        className={s.btn1}
+                        onClick={() => {
+                          setEventTab("출근");
+                        }}
+                        style={{
+                          backgroundColor:
+                            eventTab === "출근" ? "#1B3A6B" : "white",
+                          border:
+                            eventTab === "출근"
+                              ? "1px solid #1B3A6B"
+                              : "1px solid #D1D5DB",
+                        }}
+                      >
+                        <img
+                          src={
+                            eventTab === " 출근"
+                              ? "/Check Check.png"
+                              : "/Check Check (1).png"
+                          }
+                          alt=""
+                        />
+                        <span
+                          style={{
+                            fontWeight: eventTab === "출근" ? "bold" : "normal",
+                            color: eventTab === "출근" ? "white" : "#9CA3AF",
+                          }}
+                        >
+                          출근
+                        </span>
                       </button>
-                      <button className={s.btn2}>
+                      <button
+                        className={s.btn2}
+                        onClick={() => {
+                          setEventTab("지각");
+                        }}
+                        style={{
+                          backgroundColor:
+                            eventTab === "지각" ? "#FFF7ED" : "white",
+                          border:
+                            eventTab === "지각"
+                              ? "1px solid #EA580C"
+                              : "1px solid #FED7AA",
+                        }}
+                      >
                         <img src="/Alarm Clock.png" alt="" />
-                        <span>지각</span>
+                        <span
+                          style={{
+                            fontWeight: eventTab === "지각" ? "bold" : "normal",
+                          }}
+                        >
+                          지각
+                        </span>{" "}
                       </button>
-                      <button className={s.btn3}>
-                        <img src="/Log Out (1).png" alt="" />
-                        <span>조퇴</span>
+                      <button
+                        className={s.btn3}
+                        onClick={() => {
+                          setEventTab("조퇴");
+                        }}
+                        style={{
+                          border:
+                            eventTab === "조퇴"
+                              ? "1px solid #374151"
+                              : "1px solid #D1D5DB",
+                        }}
+                      >
+                        <img
+                          src={
+                            eventTab === " 조퇴"
+                              ? "/Log Out (2).png"
+                              : "/Log Out (1).png"
+                          }
+                          alt=""
+                        />
+                        <span
+                          style={{
+                            fontWeight: eventTab === "조퇴" ? "bold" : "normal",
+                            color: eventTab === "조퇴" ? "#374151" : "#9CA3AF",
+                          }}
+                        >
+                          조퇴
+                        </span>
                       </button>
                       <button className={s.btn4}>
                         <img src="/X (1).png" alt="" />
                         <span>결근</span>
                       </button>
-                      <button className={s.btn5}>
+                      <button
+                        className={s.btn3}
+                        onClick={() => {
+                          setEventTab("연차");
+                        }}
+                        style={{
+                          backgroundColor:
+                            eventTab === "연차" ? "#F0FDF4" : "white",
+                          border:
+                            eventTab === "연차"
+                              ? "1px solid #16A34A"
+                              : "1px solid #BBF7D0",
+                        }}
+                      >
                         <img src="/Calendar Check (1).png" alt="" />
-                        <span>연차</span>
+                        <span
+                          style={{
+                            fontWeight: eventTab === "연차" ? "bold" : "normal",
+                            color: "#16A34A",
+                          }}
+                        >
+                          연차
+                        </span>
                       </button>
                       <button className={s.btn6}>
                         <img src="/Calendar (1).png" alt="" />
@@ -154,57 +249,575 @@ export default function page() {
                         <img src="/Book Open.png" alt="" />
                         <span>교육</span>
                       </button>
-                      <button className={s.btn9}>
-                        <img src="/Shield Check (1).png" alt="" />
-                        <span>공가</span>
+                      <button
+                        className={s.btn3}
+                        onClick={() => {
+                          setEventTab("공가");
+                        }}
+                        style={{
+                          backgroundColor:
+                            eventTab === "공가" ? "#1B3A6B" : "white",
+                          border:
+                            eventTab === "공가"
+                              ? "1px solid #1B3A6B"
+                              : "1px solid #D1D5DB",
+                        }}
+                      >
+                        <img
+                          src={
+                            eventTab === "공가"
+                              ? "/Shield Check (3).png"
+                              : "/Shield Check (1).png"
+                          }
+                          alt=""
+                        />
+                        <span
+                          style={{
+                            fontWeight: eventTab === "공가" ? "bold" : "normal",
+                            color: eventTab === "공가" ? "white" : "#9CA3AF",
+                          }}
+                        >
+                          공가
+                        </span>
                       </button>
                     </div>
                   </div>
-                  <div className={s.upload_time}>
-                    <div>
-                      <label>출근 시간</label>
-                      <div className={s.time_box}>
-                        <span>09:00</span>
-                        <img src="/Clock (3).png" alt="" />
-                      </div>
-                    </div>
-                    <div>
-                      <label>퇴근 시간</label>
-                      <div className={s.time_box}>
-                        <span>18:00</span>
-                        <img src="/Clock (3).png" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className={s.upload_work}>
-                    <div className={s.work_head}>
-                      <label>초과근무(OT)</label>
-                      <label className={s.work_toggle}>
-                        <input role="switch" type="checkbox" id="toggle" />
-                      </label>
-                      <p>적용</p>
-                    </div>
-                    <div className={s.upload_time}>
+                  <div
+                    style={{
+                      display: eventTab === "출근" ? "block" : "none",
+                    }}
+                  >
+                    <div className={s.upload_time} style={{ width: "308px" }}>
                       <div>
-                        <div className={s.time_box2}>
+                        <label>출근 시간</label>
+                        <div className={s.time_box}>
+                          <span>09:00</span>
+                          <img src="/Clock (3).png" alt="" />
+                        </div>
+                      </div>
+                      <div>
+                        <label>퇴근 시간</label>
+                        <div className={s.time_box}>
                           <span>18:00</span>
                           <img src="/Clock (3).png" alt="" />
                         </div>
                       </div>
-                      <span className={s.time_span}>~</span>
+                    </div>
+                    <div
+                      className={s.upload_work}
+                      style={{ marginTop: "14px" }}
+                    >
+                      <div className={s.work_head}>
+                        <label>초과근무(OT)</label>
+                        <label className={s.work_toggle}>
+                          <input role="switch" type="checkbox" id="toggle" />
+                        </label>
+                        <p>적용</p>
+                      </div>
+                      <div className={s.upload_time}>
+                        <div>
+                          <div className={s.time_box2}>
+                            <span>18:00</span>
+                            <img src="/Clock (3).png" alt="" />
+                          </div>
+                        </div>
+                        <span className={s.time_span}>~</span>
+                        <div>
+                          <div className={s.time_box2}>
+                            <span>20:30</span>
+                            <img src="/Clock (3).png" alt="" />
+                          </div>
+                        </div>
+                        <div className={s.time_over}>2.5h</div>
+                      </div>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>비고</label>
+                      <input type="text" placeholder="특이사항을 입력하세요" />
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      display: eventTab === "지각" ? "block" : "none",
+                    }}
+                  >
+                    <div className={s.late_info}>
+                      <img src="/Circle Alert.png" alt="" />
+                      <p>지각 시간이 자동으로 계산됩니다.</p>
+                    </div>
+                    <div className={s.upload_time}>
                       <div>
-                        <div className={s.time_box2}>
-                          <span>20:30</span>
+                        <label>
+                          출근 시간{" "}
+                          <span
+                            style={{
+                              backgroundColor: "#FFF7ED",
+                              borderRadius: "50px",
+                              padding: "0 6px",
+                              color: "#EA580C",
+                              fontSize: "10px",
+                            }}
+                          >
+                            지각
+                          </span>
+                        </label>
+                        <div
+                          className={s.time_box}
+                          style={{
+                            border: "1px solid #EA580C",
+                            color: "#EA580C",
+                          }}
+                        >
+                          <span>10:30</span>
+                          <img src="/Clock (7).png" alt="" />
+                        </div>
+                      </div>
+                      <div>
+                        <label>퇴근 시간</label>
+                        <div className={s.time_box}>
+                          <span>18:00</span>
                           <img src="/Clock (3).png" alt="" />
                         </div>
                       </div>
-                      <div className={s.time_over}>2.5h</div>
+                    </div>
+                    <div
+                      className={s.upload_work}
+                      style={{ marginTop: "14px" }}
+                    >
+                      <div className={s.work_head}>
+                        <label>지각 사유</label>
+                      </div>
+                      <select
+                        style={{
+                          border: "1px solid #D1D5DB",
+                          width: "308px",
+                          borderRadius: "6px",
+                          padding: " 0 12px",
+                          height: "36px",
+                          fontSize: "13px",
+                        }}
+                      >
+                        <option value="교통 지연">교통 지연</option>
+                      </select>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>비고</label>
+                      <input type="text" placeholder="특이사항을 입력하세요" />
                     </div>
                   </div>
-                  <div className={s.time_write}>
-                    <label>비고</label>
-                    <input type="text" placeholder="특이사항을 입력하세요" />
+
+                  <div
+                    style={{
+                      display: eventTab === "조퇴" ? "block" : "none",
+                    }}
+                  >
+                    <div
+                      className={s.late_info}
+                      style={{ backgroundColor: "#F8FAFC" }}
+                    >
+                      <img src="/Info1.png" alt="" />
+                      <p style={{ color: "#6B7280" }}>
+                        조퇴 시간 이후는 결근으로 처리됩니다.
+                      </p>
+                    </div>
+                    <div className={s.upload_time}>
+                      <div>
+                        <label>출근 시간</label>
+                        <div className={s.time_box}>
+                          <span>09:00</span>
+                          <img src="/Clock (3).png" alt="" />
+                        </div>
+                      </div>
+                      <div>
+                        <label>
+                          조퇴 시간{" "}
+                          <span
+                            style={{
+                              backgroundColor: "#F1F5F9",
+                              borderRadius: "50px",
+                              padding: "0 6px",
+                              color: "#374151",
+                              fontSize: "10px",
+                            }}
+                          >
+                            필수
+                          </span>{" "}
+                        </label>
+                        <div className={s.time_box}>
+                          <span>14:00</span>
+                          <img src="/Clock (3).png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className={s.upload_work}
+                      style={{ marginTop: "14px" }}
+                    >
+                      <div className={s.work_head}>
+                        <label>조퇴 사유</label>
+                      </div>
+                      <select
+                        style={{
+                          border: "1px solid #D1D5DB",
+                          width: "308px",
+                          borderRadius: "6px",
+                          padding: " 0 12px",
+                          height: "36px",
+                          fontSize: "13px",
+                        }}
+                      >
+                        <option value="개인 사정">개인 사정</option>
+                      </select>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>비고</label>
+                      <input type="text" placeholder="특이사항을 입력하세요" />
+                    </div>
                   </div>
+
+                  <div
+                    style={{
+                      display: eventTab === "공가" ? "block" : "none",
+                    }}
+                  >
+                    <div className={s.upload_time}>
+                      <div>
+                        <label style={{ display: "flex" }}>
+                          공가 구분 <p style={{ color: "#EF4444" }}>*</p>
+                        </label>
+                        <select
+                          style={{
+                            border: "1px solid #D1D5DB",
+                            width: "308px",
+                            borderRadius: "6px",
+                            padding: " 0 12px",
+                            height: "36px",
+                            fontSize: "13px",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          <option value="예비군 훈련">예비군 훈련</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className={s.upload_time}>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <label style={{ display: "flex" }}>
+                          공가 기간 <p style={{ color: "#EF4444" }}>*</p>
+                        </label>
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "8px",
+                            width: "100%",
+                          }}
+                        >
+                          <input
+                            type="date"
+                            style={{
+                              width: "142px",
+                              border: "1px solid #D1D5DB",
+                              padding: "0 10px",
+                              borderRadius: "6px",
+                              height: "36px",
+                              lineHeight: "36px",
+                              fontSize: "12px",
+                            }}
+                          />
+                          <p style={{ color: "#9CA3AF", lineHeight: "36px" }}>
+                            ~
+                          </p>
+                          <input
+                            type="date"
+                            style={{
+                              width: "142px",
+                              border: "1px solid #D1D5DB",
+                              padding: "0 10px",
+                              borderRadius: "6px",
+                              height: "36px",
+                              lineHeight: "36px",
+                              fontSize: "12px",
+                            }}
+                          />
+                        </div>
+                        <span
+                          style={{
+                            display: "flex",
+                            backgroundColor: "#EFF6FF",
+                            padding: "0 10px",
+                            borderRadius: "6px",
+                            color: "#1D4ED8",
+                            fontSize: "12px",
+                            marginTop: "6px",
+                            height: "27px",
+                            lineHeight: "27px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          <img
+                            src="/Clock (8).png"
+                            alt=""
+                            style={{
+                              width: "12px",
+                              height: "12px",
+                              marginTop: "6px",
+                              marginRight: "5px",
+                            }}
+                          />
+                          총 <p>2</p>일
+                        </span>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: "14px" }}>
+                      <label style={{ display: "flex" }}>
+                        증빙서류{" "}
+                        <p style={{ color: "#6B7280", fontSize: "12px" }}>
+                          (필수)
+                        </p>
+                      </label>
+                      <div className={s.vac_receipt}>
+                        <img src="/Paperclip1.png" alt="" />
+                        <p>훈련소집통지서</p>
+                        <span>.pdf</span>
+                        <div className={s.vac_receipt_btn}>
+                          <button className={s.receipt_del}>
+                            <img src="/Trash 2.png" alt="" />
+                            <p>삭제</p>
+                          </button>
+                          <button className={s.receipt_add}>
+                            <img src="/Plus (3).png" alt="" />
+                            <p>추가</p>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>비고</label>
+                      <input type="text" placeholder="특이사항을 입력하세요" />
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      display: eventTab === "연차" ? "block" : "none",
+                    }}
+                  >
+                    <div className={s.rest_status}>
+                      <div className={s.rest_status_head}>
+                        <img src="/Calendar Check (1).png" alt="" />
+                        <p>연차 현황</p> <span>2025년 기준</span>
+                      </div>
+                      <ul className={s.rest_status_cont}>
+                        <li>
+                          <span>15일</span>
+                          <p>총 부여</p>
+                        </li>
+                        <li>
+                          <span>8일</span>
+                          <p>사용</p>
+                        </li>
+                        <li>
+                          <span style={{ color: "#16A34A" }}>7일</span>
+                          <p style={{ color: "#16A34A" }}>잔여</p>
+                        </li>
+                        <li>
+                          <span style={{ color: "#2563EB" }}>2일</span>
+                          <p style={{ color: "#2563EB" }}>이번 신청</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className={s.upload_time}>
+                      <div>
+                        <label style={{ display: "flex" }}>
+                          연차 구분 <p style={{ color: "#EF4444" }}>*</p>
+                        </label>
+
+                        <ul className={s.rest_type}>
+                          <li
+                            onClick={() => {
+                              setRestType("종일");
+                            }}
+                            style={{
+                              backgroundColor:
+                                restType === "종일" ? "#16A34A" : "white",
+                              border:
+                                restType === "종일"
+                                  ? "1px solid  #16A34A"
+                                  : "1px solid #D1D5DB",
+                            }}
+                          >
+                            <img
+                              style={{ marginLeft: "25px" }}
+                              src={
+                                restType === "종일"
+                                  ? "/Sun (2).png"
+                                  : "/Sun22.png"
+                              }
+                              alt=""
+                            />
+                            <p
+                              style={{
+                                fontWeight:
+                                  restType === "종일" ? "bold" : "normal",
+                                color:
+                                  restType === "종일" ? "white" : "#9CA3AF",
+                              }}
+                            >
+                              종일
+                            </p>
+                          </li>
+                          <li
+                            onClick={() => {
+                              setRestType("오전반차");
+                            }}
+                            style={{
+                              backgroundColor:
+                                restType === "오전반차" ? "#16A34A" : "white",
+                              border:
+                                restType === "오전반차"
+                                  ? "1px solid  #16A34A"
+                                  : "1px solid #D1D5DB",
+                            }}
+                          >
+                            <img
+                              src={
+                                restType === "오전반차"
+                                  ? "/Sunrise.png"
+                                  : "/Sunset.png"
+                              }
+                              alt=""
+                            />
+                            <p
+                              style={{
+                                fontWeight:
+                                  restType === "오전반차" ? "bold" : "normal",
+                                color:
+                                  restType === "오전반차" ? "white" : "#9CA3AF",
+                              }}
+                            >
+                              오전반차
+                            </p>
+                          </li>
+                          <li
+                            onClick={() => {
+                              setRestType("오후반차");
+                            }}
+                            style={{
+                              backgroundColor:
+                                restType === "오후반차" ? "#16A34A" : "white",
+                              border:
+                                restType === "오후반차"
+                                  ? "1px solid  #16A34A"
+                                  : "1px solid #D1D5DB",
+                            }}
+                          >
+                            <img
+                              src={
+                                restType === "오후반차"
+                                  ? "/Sunrise.png"
+                                  : "/Sunset.png"
+                              }
+                              alt=""
+                            />
+                            <p
+                              style={{
+                                fontWeight:
+                                  restType === "오후반차" ? "bold" : "normal",
+                                color:
+                                  restType === "오후반차" ? "white" : "#9CA3AF",
+                              }}
+                            >
+                              오후반차
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className={s.upload_time}>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                        }}
+                      >
+                        <label style={{ display: "flex" }}>
+                          연차 기간 <p style={{ color: "#EF4444" }}>*</p>
+                        </label>
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "8px",
+                            width: "100%",
+                          }}
+                        >
+                          <input
+                            type="date"
+                            style={{
+                              width: "142px",
+                              border: "1px solid #16A34A",
+                              padding: "0 10px",
+                              borderRadius: "6px",
+                              height: "36px",
+                              lineHeight: "36px",
+                              fontSize: "12px",
+                            }}
+                          />
+                          <p style={{ color: "#9CA3AF", lineHeight: "36px" }}>
+                            ~
+                          </p>
+                          <input
+                            type="date"
+                            style={{
+                              width: "142px",
+                              border: "1px solid #16A34A",
+                              padding: "0 10px",
+                              borderRadius: "6px",
+                              height: "36px",
+                              lineHeight: "36px",
+                              fontSize: "12px",
+                            }}
+                          />
+                        </div>
+                        <span
+                          style={{
+                            display: "flex",
+                            backgroundColor: "#F0FDF4",
+                            padding: "0 10px",
+                            borderRadius: "6px",
+                            color: "#16A34A",
+                            fontSize: "12px",
+                            marginTop: "6px",
+                            height: "27px",
+                            lineHeight: "27px",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          <img
+                            src="/Clock (9).png"
+                            alt=""
+                            style={{
+                              width: "12px",
+                              height: "12px",
+                              marginTop: "6px",
+                              marginRight: "5px",
+                            }}
+                          />
+                          총 <p> 2</p>일 차감
+                        </span>
+                      </div>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>연차 사유</label>
+                      <input type="text" placeholder="연차 사유를 입력하세요" />
+                    </div>
+                  </div>
+
                   <div className={s.upload_btn}>
                     <button className={s.restore}>
                       <img src="/Rotate Ccw (1).png" alt="" />

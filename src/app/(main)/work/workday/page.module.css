@@ -231,8 +231,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  position: relative;
-  height: 532px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .upload_cont label {
@@ -299,6 +299,7 @@ body {
   text-align: center;
   font-weight: 500;
   margin-bottom: 6px;
+  cursor: pointer;
 }
 
 .type_btn img {
@@ -490,9 +491,7 @@ body {
 .upload_btn {
   display: flex;
   gap: 8px;
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
+  justify-content: right;
 }
 
 .upload_btn button {
@@ -665,4 +664,171 @@ body {
 
 .workBox_li li:nth-child(11) {
   width: 80px;
+}
+
+.late_info {
+  width: 100%;
+  background-color: #fff7ed;
+  border-radius: 6px;
+  padding: 0 12px;
+  height: 35px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.late_info img {
+  width: 14px;
+  height: 14px;
+  margin-top: 10px;
+}
+
+.late_info p {
+  color: #ea580c;
+  font-size: 12px;
+  line-height: 35px;
+}
+
+.vac_receipt {
+  display: flex;
+  background-color: #f8fafc;
+  border: 1px solid #d1d5db;
+  height: 48px;
+  padding: 0 14px;
+  line-height: 48px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.vac_receipt img {
+  width: 14px;
+  height: 14px;
+  margin: 16px 5px 0 0;
+}
+
+.vac_receipt p {
+  font-size: 12px;
+  color: #374151;
+}
+
+.vac_receipt_btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.vac_receipt_btn button {
+  display: flex;
+  cursor: pointer;
+}
+
+.receipt_del p {
+  color: #ef4444;
+}
+
+.receipt_add {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  height: 28px;
+  margin-top: 10px;
+  line-height: 28px;
+  padding: 0 7px;
+}
+
+.receipt_add img {
+  margin-top: 6px;
+}
+
+.rest_type {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  justify-content: space-between;
+}
+
+.rest_type li {
+  width: 98px;
+  border-radius: 6px;
+  height: 36px;
+  line-height: 36px;
+  display: flex;
+  gap: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rest_type img {
+  width: 12px;
+  height: 12px;
+  margin-top: 10px;
+  margin-left: 18px;
+}
+
+.rest_status {
+  background-color: #f0fdf4;
+  margin-bottom: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rest_status_head {
+  display: flex;
+  position: relative;
+}
+
+.rest_status_head img {
+  width: 13px;
+  height: 13px;
+  margin-top: 1px;
+  margin-right: 3px;
+}
+
+.rest_status_head p {
+  font-size: 12px;
+  font-weight: bold;
+  color: #15803d;
+}
+
+.rest_status_head span {
+  color: #6b7280;
+  font-size: 11px;
+  position: absolute;
+  right: 0;
+}
+
+.rest_status_cont {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.rest_status_cont li {
+  border-right: 1px solid #d1fae5;
+  position: relative;
+  padding-right: 25px;
+}
+
+.rest_status_cont li:last-child {
+  border: none;
+  padding: 0;
+}
+
+.rest_status_cont span {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.rest_status_cont p {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.time_write {
+  margin-top: 14px;
 }
