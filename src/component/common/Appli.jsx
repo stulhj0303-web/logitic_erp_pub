@@ -8,23 +8,34 @@ import { toast } from "sonner";
 
 export default function Appli() {
   const [appliInfo, setAppliInfo] = useState();
-  const [fileInfo, setFileInfo] = useState(null);
+  const [fileInfo, setFileInfo] = useState({});
+  const [fileId, setFileId] = useState("");
   const [eventType, setEventType] = useState("본인결혼");
   const [eventTargetInfo, setEventTargetInfo] = useState("");
 
-  const fileUpload = (fileList) => {
+  const fileUpload = async (fileList) => {
     const url = "http://localhost:33000/api/v1/files/upload";
     const token = localStorage.getItem("accessToken");
 
     const 파일 = fileList[0];
+
+    const 파일명 = 파일?.name;
+    const 사이즈 = 파일?.size;
+    setFileInfo({
+      name: 파일명,
+      size: 사이즈,
+    });
+
     const formData = new FormData();
     formData.append("file", 파일);
     formData.append("refType", "1");
-    axios.post(url, formData, {
+    const res = await axios.post(url, formData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    setFileId(res.data.data);
   };
 
   const fileUploaderRef = useRef(null);
@@ -37,29 +48,6 @@ export default function Appli() {
       },
     });
   };
-
-  // const 경조비파일업로드 = async () => {
-  //   const token = localStorage.getItem("accessToken");
-  //   const formData = new FormData();
-
-  //   formData.append("savedFileName", setFileInfo);
-
-  //   const res = await baseApi.post(
-  //     "/api/v1/files/upload",
-  //     {
-  //       savedFileDate: fileInfo?.savedFileDate,
-  //       savedFileExt: fileInfo?.savedFileExt,
-  //       savedFileId: fileInfo?.savedFileId,
-  //       savedFileName: fileInfo?.savedFileName,
-  //       savedFileSize: fileInfo?.savedFileSize,
-  //     },
-  //     {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     },
-  //   );
-  // };
 
   toast("테스트 토스트", { position: "top-center" });
   useEffect(() => {
@@ -145,6 +133,7 @@ export default function Appli() {
         accountHolder: eventTargetInfo?.accountHolder,
         approvalStatus: "확인",
         memo: "string",
+        filIdList: [fileId],
       },
       {
         headers: {
@@ -568,17 +557,26 @@ export default function Appli() {
               <p>파일 선택</p>
             </button>
           </div>
-          <div className={s.info_file_cont}>
-            <img src="/File Text (3).png" alt="" />
-            <div className={s.info_file_name}>
-              <p>청첩장_이영희.pdf</p>
-              <span>238 KB · 업로드 완료</span>
+
+          {fileInfo?.name && (
+            <div className={s.info_file_cont}>
+              <img src="/File Text (3).png" alt="" />
+              <div className={s.info_file_name}>
+                <p>{fileInfo?.name}</p>
+                <span>{fileInfo?.size} KB · 업로드 완료</span>
+              </div>
+              <button
+                className={s.file_delete}
+                onClick={() => {
+                  setFileInfo({});
+                }}
+              >
+                <img src="/X (1).png" alt="" />
+                <p>삭제</p>
+              </button>
             </div>
-            <button className={s.file_delete}>
-              <img src="/X (1).png" alt="" />
-              <p>삭제</p>
-            </button>
-          </div>
+          )}
+
           <div className={s.add_contents}>
             <label>비고</label>
             <input type="text" placeholder="추가 사항을 입력하세요. (선택)" />

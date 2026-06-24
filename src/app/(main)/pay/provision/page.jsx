@@ -291,21 +291,365 @@ export default function page() {
         </DialogContent>
       </Dialog>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="w-[400px]">
-          <div className={s.pdf_cont}>
-            <span className={s.pdf_img}>
-              <img src="/Download (1).png" alt="" />
-            </span>
-            <div className={s.pdf_text}>
-              <p>PDF 다운로드</p>
-              <span>
-                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
-                계속 진행하시겠습니까?
-              </span>
+        <DialogContent className="w-[560px]">
+          <DialogHeader>
+            <DialogTitle>
+              {" "}
+              <div className={s.modal_header}>
+                <img src="/Receipt Text (3).png" alt="" />
+                <div className={s.modal_header_text}>
+                  <span>급여명세서</span>
+                  <p>Salary Statement</p>
+                </div>
+                <div className={s.modal_header_date}>2025년 7월분</div>
+              </div>
+            </DialogTitle>
+          </DialogHeader>
+          <div className={s.modal_cont}>
+            <div className={s.modal_company}>
+              <img src="/Logo Mark.png" alt="" />
+              <div className={s.modal_company_text}>
+                <span>주식회사 HRSystem</span>
+                <p>사업자등록번호: 123-45-67890 | 대표: 홍길동</p>
+              </div>
+              <p className={s.modal_company_p}>
+                # PAY-2025-07-0008 | <img src="/Calendar (4).png" alt="" />
+                2025.08.01
+              </p>
             </div>
-            <div className={s.pdf_button}>
-              <button className={s.pdf_cancel}>취소</button>
-              <button className={s.pdf_select}>확인</button>
+            <div className={s.modal_info}>
+              <div className={s.modal_info_head}>
+                <span></span>
+                <p>수급자 정보</p>
+              </div>
+              <div className={s.modal_info_box}>
+                <ul className={s.modal_info_list}>
+                  <li>성명</li>
+                  <li style={{ display: "flex" }}>
+                    <span>박</span>
+                    <p>박민준</p>
+                  </li>
+                  <li>사원번호</li>
+                  <li>EMP-003</li>
+                </ul>
+                <ul className={s.modal_info_list}>
+                  <li>부서</li>
+                  <li>개발팀</li>
+                  <li>직급</li>
+                  <li>대리</li>
+                </ul>
+                <ul className={s.modal_info_list}>
+                  <li>지급연월</li>
+                  <li>2025.07 (7.25 지급)</li>
+                  <li>근속연수</li>
+                  <li>3년 11개월</li>
+                </ul>
+              </div>
+            </div>
+            <div className={s.modal_pay}>
+              <ul className={s.modal_pay1}>
+                <li
+                  style={{
+                    backgroundColor: "#EFF6FF",
+                    borderBottom: " 1px solid #BFDBFE",
+                    position: "relative",
+                    borderRight: "1px solid #BFDBFE",
+                  }}
+                >
+                  <img src="/Trending Up (4).png" alt="" />
+                  <span>지급항목</span>
+                  <p
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      fontSize: "11px",
+                      color: "#93C5FD",
+                    }}
+                  >
+                    금액(원)
+                  </p>
+                </li>
+                <li>
+                  <p className={s.modal_pay1_circle}></p>
+                  <p style={{ fontSize: "12px" }}>기본급</p>
+                  <span style={{ position: "absolute", right: "12px" }}>
+                    3,500,000
+                  </span>
+                </li>
+                <li>
+                  <p className={s.modal_pay1_circle}></p>
+                  <p style={{ fontSize: "12px" }}>식대</p>
+                  <span style={{ position: "absolute", right: "12px" }}>
+                    200,000
+                  </span>
+                </li>
+                <li>
+                  <p className={s.modal_pay1_circle}></p>
+                  <p style={{ fontSize: "12px" }}>교통비</p>
+                  <span style={{ position: "absolute", right: "12px" }}>
+                    150,000
+                  </span>
+                </li>
+                <li>
+                  <p className={s.modal_pay1_circle}></p>
+                  <p style={{ fontSize: "12px" }}>야근수당</p>
+                  <span style={{ position: "absolute", right: "12px" }}>
+                    350,000
+                  </span>
+                </li>
+                <li style={{ borderBottom: "1px solid #BFDBFE" }}>
+                  <p className={s.modal_pay1_circle}></p>
+                  <p style={{ fontSize: "12px" }}>직책수당</p>
+                  <span style={{ position: "absolute", right: "12px" }}>-</span>
+                </li>
+                <li
+                  style={{
+                    backgroundColor: "#EFF6FF",
+                    borderRight: "1px solid #BFDBFE",
+                  }}
+                >
+                  <span>지급합계</span>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#1E40AF",
+                      fontSize: "13px",
+                    }}
+                  >
+                    4,200,000
+                  </span>
+                </li>
+              </ul>
+              <ul className={s.modal_pay1}>
+                <li
+                  style={{
+                    backgroundColor: "#FFF0F0",
+                    borderBottom: " 1px solid #FECACA",
+                    position: "relative",
+                    borderRight: "none",
+                  }}
+                >
+                  <img src="/Trending Down.png" alt="" />
+                  <span style={{ color: "#DC2626" }}>공제항목</span>
+                  <p
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      fontSize: "11px",
+                      color: "#FCA5A5",
+                    }}
+                  >
+                    금액(원)
+                  </p>
+                </li>
+                <li style={{ borderRight: "none" }}>
+                  <p className={s.modal_pay1_circle1}></p>
+                  <p style={{ fontSize: "12px" }}>국민연금 (4.5%)</p>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    157,500
+                  </span>
+                </li>
+                <li style={{ backgroundColor: "#FFF8F8", borderRight: "none" }}>
+                  <p className={s.modal_pay1_circle1}></p>
+                  <p style={{ fontSize: "12px" }}>건강보험 (3.98%)</p>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    139,300
+                  </span>
+                </li>
+                <li style={{ borderRight: "none" }}>
+                  <p className={s.modal_pay1_circle1}></p>
+                  <p style={{ fontSize: "12px" }}>고용보험 (0.9%)</p>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    37,800
+                  </span>
+                </li>
+                <li style={{ backgroundColor: "#FFF8F8", borderRight: "none" }}>
+                  <p className={s.modal_pay1_circle1}></p>
+                  <p style={{ fontSize: "12px" }}>소득세</p>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    88,000
+                  </span>
+                </li>
+                <li
+                  style={{
+                    borderBottom: "1px solid #FECACA",
+                    borderRight: "none",
+                  }}
+                >
+                  <p className={s.modal_pay1_circle1}></p>
+                  <p style={{ fontSize: "12px" }}>지방소득세 (10%)</p>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    8,800
+                  </span>
+                </li>
+                <li style={{ backgroundColor: "#FFF0F0" }}>
+                  <span style={{ color: "#991B1B" }}>지급합계</span>
+                  <span
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      color: "#991B1B",
+                      fontSize: "13px",
+                    }}
+                  >
+                    4,200,000
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className={s.modal_krw}>
+              <div className={s.modal_krw1}>
+                <div className={s.modal_krw1_box}>
+                  <div style={{ display: "flex", gap: "8px" }}>
+                    <span>
+                      <img src="/Banknote (7).png" alt="" />
+                    </span>
+                    <p>실 지급액</p>
+                  </div>
+                  <p
+                    style={{
+                      color: "#60A5FA",
+                      fontSize: "11px",
+                      fontWeight: "normal",
+                    }}
+                  >
+                    4,200,000 - 431,400
+                  </p>
+                </div>
+                <div className={s.modal_krw1_text}>
+                  <span>3,768,600</span>
+                  <p>원 (KRW)</p>
+                </div>
+              </div>
+              <div className={s.modal_krw2}>
+                <span>
+                  <img src="/Quote.png" alt="" />
+                  <p>삼백칠십육만팔천육백원정 (₩3,768,600)</p>
+                </span>
+              </div>
+              <div className={s.modal_krw3}>
+                <div
+                  className={s.modal_krw3_box1}
+                  style={{ marginLeft: "50px" }}
+                >
+                  <img src="/Arrow Up.png" alt="" />
+                  <p>지급 4,200,000원</p>
+                </div>
+                <span>-</span>
+                <div className={s.modal_krw3_box1}>
+                  <img src="/Arrow Down.png" alt="" />
+                  <p style={{ color: "#FCA5A5" }}>공제 431,400원</p>
+                </div>
+                <span>=</span>
+                <div
+                  className={s.modal_krw3_box1}
+                  style={{ backgroundColor: "white" }}
+                >
+                  <img src="/Check11.png" alt="" />
+                  <p style={{ color: "#1B3A6B", fontWeight: "bold" }}>
+                    실지급 3,768,600원
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className={s.modal_month}>
+              <div className={s.modal_month_title}>
+                <img src="/Calendar Check.png" alt="" />
+                <p>7월 근태 요약</p>
+              </div>
+              <ul className={s.modal_month_list}>
+                <li>
+                  <span style={{ backgroundColor: "#3B82F6" }}></span>{" "}
+                  <p>출근 20일</p>
+                </li>
+                <li>
+                  <span style={{ backgroundColor: "#16A34A" }}></span>{" "}
+                  <p>연차 1일</p>
+                </li>
+                <li>
+                  <span style={{ backgroundColor: "#7C3AED" }}></span>{" "}
+                  <p>야근 7시간</p>
+                </li>
+                <li>
+                  <span style={{ backgroundColor: "#EA580C" }}></span>{" "}
+                  <p>지각 0회</p>
+                </li>
+              </ul>
+            </div>
+            <div className={s.modal_check}>
+              <div className={s.modal_check_head}>
+                <span></span>
+                <p>확인 및 직인</p>
+              </div>
+              <div className={s.modal_check_cont}>
+                <div className={s.modal_check_text}>
+                  <p>위 금액을 급여로 지급함을 확인합니다.</p>
+                  <p>지급일: 2025년 7월 25일</p>
+                  <span>주식회사 HRSystem 대표이사 홍 길 동 (인)</span>
+                </div>
+                <img src="/Seal Circle.png" alt="" />
+              </div>
+              <div className={s.modal_alert}>
+                <img src="/Circle Alert (1).png" alt="" />
+                <p>
+                  본 명세서는 전자문서로 발행되었으며 위변조 시 법적 처벌을 받을
+                  수 있습니다.
+                </p>
+              </div>
+            </div>
+            <div className={s.modal_footer}>
+              <div className={s.modal_footer_text}>
+                <span>
+                  <img src="/Shield Check (4).png" alt="" />
+                  <p>전자문서 인증완료</p>
+                </span>
+                <p className={s.modal_footer_text_p}>CERT-2025-0089</p>
+              </div>
+              <div className={s.modal_footer_btn}>
+                <button className={s.email_btn}>
+                  <img src="/Mail (1).png" alt="" />
+                  <p>이메일 발송</p>
+                </button>
+                <button className={s.print_btn}>
+                  <img src="/Printer.png" alt="" />
+                  <p>인쇄</p>
+                </button>
+                <button className={s.close_btn}>
+                  <img src="/X.png" alt="" />
+                  <p>닫기</p>
+                </button>
+              </div>
             </div>
           </div>
         </DialogContent>

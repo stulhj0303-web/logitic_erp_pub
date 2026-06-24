@@ -8,10 +8,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Spinner } from "@/components/ui/spinner";
+import axios from "axios";
 
 export default function AppliDB() {
   const [tableList, setTableList] = useState([]);
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState();
+  const [eventDetailInfo, setEventDetailInfo] = useState();
 
   useEffect(() => {
     const getEmployees = async () => {
@@ -36,12 +40,51 @@ export default function AppliDB() {
 
     console.log("res?.data?.data", res?.data?.data);
     setTableList(res?.data?.data || []);
-    event;
   };
 
   useEffect(() => {
     경조비신청리스트조회();
   }, []);
+
+  const goDownloadFile = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    const res = await axios.get(
+      `http://localhost:33000/api/v1/files/${eventDetailInfo?.savedFileId}/download`,
+      {
+        responseType: "blob",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    const url = window.URL.createObjectURL(res?.data);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = eventDetailInfo?.savedFileName; // 원본 파일명
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  };
+
+  const 경조비상세조회 = async (id) => {
+    setIsLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+    console.log(token);
+
+    const res = await baseApi.get(`/api/v1/support/detail/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    setEventDetailInfo(res?.data?.data);
+    setIsLoading(false);
+    setOpen(true);
+  };
 
   return (
     <div className={style.mainDB}>
@@ -57,7 +100,6 @@ export default function AppliDB() {
         <li>처리상태</li>
         <li>관리</li>
       </ul>
-
       {tableList.length > 0 &&
         tableList.map((item, index) => (
           <ul
@@ -79,15 +121,19 @@ export default function AppliDB() {
                 style={{ cursor: "pointer" }}
                 className={style.more_data}
                 onClick={() => {
-                  setOpen(true);
+                  console.log(item?.EmployeeEventSupportId);
+                  경조비상세조회(item?.EmployeeEventSupportId);
                 }}
+
+                // onClick={() => {
+                //   setOpen(true);
+                // }}
               >
                 상세
               </button>
             </li>
           </ul>
         ))}
-
       <ul className={style.maindbListlast}>
         <li>총 {tableList.length}건</li>
         <li>
@@ -115,11 +161,12 @@ export default function AppliDB() {
           <div className={style.money_cont}>
             <div className={style.money_status}>
               <div className={style.status_head}>
-                # 신청번호: <p> WEL-2025-07-001</p>
+                # 신청번호: support-
+                <p> {eventDetailInfo?.EmployeeEventSupportId}</p>
               </div>
               <div className={style.status_head1}>
                 <img src="/Calendar (3).png" alt="" /> 신청일:
-                <p> 2025.07.01</p>
+                <p>{eventDetailInfo?.applicationDate}</p>
               </div>
               <div className={style.status_ing}>
                 <div className={style.status_ing1}>
@@ -166,7 +213,7 @@ export default function AppliDB() {
                         fontWeight: "bold",
                       }}
                     >
-                      본인결혼
+                      {eventDetailInfo?.eventType}
                     </span>
                     <p
                       style={{
@@ -194,9 +241,11 @@ export default function AppliDB() {
                         marginRight: "5px",
                       }}
                     >
-                      이
+                      {eventDetailInfo?.targetName?.slice(0, 1)}
                     </span>
-                    <p style={{ fontWeight: "bold" }}>이영희</p>
+                    <p style={{ fontWeight: "bold" }}>
+                      {eventDetailInfo?.targetName}
+                    </p>
                     <span
                       style={{
                         backgroundColor: "#F3F4F6",
@@ -209,18 +258,18 @@ export default function AppliDB() {
                         marginTop: "10px",
                       }}
                     >
-                      본인
+                      {eventDetailInfo?.familyRelation}
                     </span>
                   </li>
                   <li>경조일</li>
                   <li>
                     <img src="/Calendar (3).png" alt="" />
-                    <p>2025년 7월 20일 (일)</p>
+                    <p>{eventDetailInfo?.eventDate}</p>
                   </li>
                   <li style={{ borderBottom: "none" }}>경조 장소</li>
                   <li style={{ borderBottom: "none" }}>
                     <img src="/Map Pin.png" alt="" />{" "}
-                    <span>더케이서울호텔 그랜드볼룸</span>
+                    <span>{eventDetailInfo?.eventLocation}</span>
                   </li>
                 </ul>
               </div>
@@ -241,7 +290,7 @@ export default function AppliDB() {
                         fontWeight: "bold",
                       }}
                     >
-                      500,000원
+                      {eventDetailInfo?.requestedAmount}
                     </span>
                     <p
                       style={{
@@ -257,15 +306,20 @@ export default function AppliDB() {
                   <li>지급계좌</li>
                   <li>
                     <img src="/Credit Card.png" alt="" />
-                    <span>국민은행</span>
-                    <p style={{ marginLeft: "5px" }}>12****-34</p>
+                    <span>{eventDetailInfo?.bankName}은행</span>
+                    <p style={{ marginLeft: "5px" }}>
+                      {eventDetailInfo?.accountNumber?.replace(
+                        /(?<=^.{4})(.+)(?=.{4})/g,
+                        "*",
+                      )}
+                    </p>
                     <span
                       style={{
                         marginLeft: "5px",
                         fontSize: "12px",
                       }}
                     >
-                      (이영희)
+                      ({eventDetailInfo?.accountHolder})
                     </span>
                   </li>
                   <li style={{ borderBottom: "none" }}>예상 지급일</li>
@@ -275,13 +329,16 @@ export default function AppliDB() {
                   </li>
                 </ul>
               </div>
-              <div className={style.info_head}>
-                <span></span>
-                <p>첨부 서류</p>
-              </div>
-              <div className={style.info_cont}>
-                <ul className={style.info_file_list}>
-                  <li style={{ borderBottom: "1px solid #E5E7EB" }}>
+
+              {eventDetailInfo?.savedFileName && (
+                <>
+                  <div className={style.info_head}>
+                    <span></span>
+                    <p>첨부 서류</p>
+                  </div>
+                  <div className={style.info_cont}>
+                    <ul className={style.info_file_list}>
+                      {/* <li style={{ borderBottom: "1px solid #E5E7EB" }}>
                     <span className={style.file_img}>
                       <img src="/File Text (1).png" alt="" />
                     </span>
@@ -298,30 +355,41 @@ export default function AppliDB() {
                         marginTop: "10px",
                       }}
                     />
-                  </li>
-                  <li>
-                    <span
-                      className={style.file_img}
-                      style={{ backgroundColor: "#FEF2F2" }}
-                    >
-                      <img src="/File Image.png" alt="" />
-                    </span>
-                    <div className={style.file_text}>
-                      <p>청첩장_스캔본.jpg</p>
-                      <span>JPG · 1.2 MB · 2025.07.01 업로드</span>
-                    </div>
-                    <img
-                      src="/Download (2).png"
-                      alt=""
-                      style={{
-                        width: "15px",
-                        height: "15px",
-                        marginTop: "10px",
-                      }}
-                    />
-                  </li>
-                </ul>
-              </div>
+                  </li> */}
+                      <li>
+                        <span
+                          className={style.file_img}
+                          style={{ backgroundColor: "#FEF2F2" }}
+                        >
+                          <img src="/File Image.png" alt="" />
+                        </span>
+                        <div className={style.file_text}>
+                          <p>{eventDetailInfo?.savedFileName}</p>
+                          <span>
+                            {eventDetailInfo?.savedFileExt} ·{" "}
+                            {eventDetailInfo?.savedFileSize} MB ·{" "}
+                            {eventDetailInfo?.applicationDate} 업로드
+                          </span>
+                        </div>
+                        <img
+                          src="/Download (2).png"
+                          alt=""
+                          style={{
+                            width: "15px",
+                            height: "15px",
+                            marginTop: "10px",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            goDownloadFile();
+                          }}
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </>
+              )}
+
               <div className={style.info_head}>
                 <span style={{ backgroundColor: "#CA8A04" }}></span>
                 <p style={{ color: "#CA8A04" }}>검토 의견</p>
@@ -360,7 +428,12 @@ export default function AppliDB() {
             </div>
           </div>
         </DialogContent>
-      </Dialog>
+      </Dialog>{" "}
+      {isLoading && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <Spinner className="size-8" />
+        </div>
+      )}
     </div>
   );
 }
