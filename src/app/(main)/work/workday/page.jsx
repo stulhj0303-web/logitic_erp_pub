@@ -4,11 +4,93 @@ import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
 import WorkBox from "@/component/common/WorkBox";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import baseApi from "@/api/baseApi";
+import axios from "axios";
 
 export default function page() {
   const [eventTab, setEventTab] = useState("출근");
   const [restType, setRestType] = useState("종일");
+  const [navInfo, setNavInfo] = useState();
+  const [isLoading, setIsLoading] = useState();
+
+  useEffect(() => {
+    const 이름 = localStorage.getItem("name");
+    const 부서명 = localStorage.getItem("departmentName");
+
+    setNavInfo({
+      departmentName: 부서명, //key, value가 같으면 생략 가능
+      name: 이름,
+    });
+  }, []);
+
+  const getAttendanceDaily = async () => {
+    try {
+      setIsLoading(true);
+
+      // 1. 근태리스트를 조회합니다.
+      const token = localStorage.getItem("accessToken");
+      const res = await baseApi.get("/api/v1/attendances/daily", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // 2. 근태리스트를 세팅합니다.
+      setAttendanceList(res?.data?.data);
+    } catch (e) {
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const 출근처리하기 = async () => {
+    setIsLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.post(
+      "/api/v1/attendances/checkin",
+      {
+        workDate: "2026-06-25",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    setIsLoading(false);
+  };
+
+  const 퇴근처리하기 = async () => {
+    setIsLoading(true);
+
+    const token = localStorage.getItem("accessToken");
+
+    const res = await baseApi.post(
+      "/api/v1/attendances/checkout",
+      {
+        workDate: "2026-06-25",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+
+    // 퇴근처리 후 재조회하기
+    getAttendanceDaily();
+
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getAttendanceDaily();
+  }, []);
+
   return (
     <div className={s.container}>
       <Nav />
@@ -116,8 +198,10 @@ export default function page() {
                       사원 선택<p style={{ color: "#EF4444" }}>*</p>
                     </label>
                     <div className={s.select_box}>
-                      <span>박</span>
-                      <p>박민준 · 개발팀</p>
+                      <span>{navInfo?.name.slice(0, 1)}</span>
+                      <p>
+                        {navInfo?.name} · {navInfo?.departmentName}
+                      </p>
                       <img src="/X.png" alt="" />
                     </div>
                   </div>
@@ -130,6 +214,7 @@ export default function page() {
                         className={s.btn1}
                         onClick={() => {
                           setEventTab("출근");
+                          출근처리하기();
                         }}
                         style={{
                           backgroundColor:
@@ -241,9 +326,14 @@ export default function page() {
                         <img src="/Calendar (1).png" alt="" />
                         <span>반차</span>
                       </button>
-                      <button className={s.btn7}>
+                      <button
+                        className={s.btn7}
+                        onClick={() => {
+                          setEventTab("퇴근");
+                        }}
+                      >
                         <img src="/Plane (1).png" alt="" />
-                        <span>출장</span>
+                        <span>퇴근</span>
                       </button>
                       <button className={s.btn8}>
                         <img src="/Book Open.png" alt="" />
@@ -475,6 +565,60 @@ export default function page() {
                     </div>
                   </div>
 
+                  <div
+                    style={{
+                      display: eventTab === "퇴근" ? "block" : "none",
+                    }}
+                  >
+                    <div className={s.upload_time} style={{ width: "308px" }}>
+                      <div>
+                        <label>출근 시간</label>
+                        <div className={s.time_box}>
+                          <span>09:00</span>
+                          <img src="/Clock (3).png" alt="" />
+                        </div>
+                      </div>
+                      <div>
+                        <label>퇴근 시간</label>
+                        <div className={s.time_box}>
+                          <span>18:00</span>
+                          <img src="/Clock (3).png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className={s.upload_work}
+                      style={{ marginTop: "14px" }}
+                    >
+                      <div className={s.work_head}>
+                        <label>초과근무(OT)</label>
+                        <label className={s.work_toggle}>
+                          <input role="switch" type="checkbox" id="toggle" />
+                        </label>
+                        <p>적용</p>
+                      </div>
+                      <div className={s.upload_time}>
+                        <div>
+                          <div className={s.time_box2}>
+                            <span>18:00</span>
+                            <img src="/Clock (3).png" alt="" />
+                          </div>
+                        </div>
+                        <span className={s.time_span}>~</span>
+                        <div>
+                          <div className={s.time_box2}>
+                            <span>20:30</span>
+                            <img src="/Clock (3).png" alt="" />
+                          </div>
+                        </div>
+                        <div className={s.time_over}>2.5h</div>
+                      </div>
+                    </div>
+                    <div className={s.time_write}>
+                      <label>비고</label>
+                      <input type="text" placeholder="특이사항을 입력하세요" />
+                    </div>
+                  </div>
                   <div
                     style={{
                       display: eventTab === "공가" ? "block" : "none",
@@ -823,7 +967,16 @@ export default function page() {
                       <img src="/Rotate Ccw (1).png" alt="" />
                       <span>초기화</span>
                     </button>
-                    <button className={s.save}>
+                    <button
+                      className={s.save}
+                      onClick={() => {
+                        if (eventTab === "퇴근") {
+                          퇴근처리하기();
+                        } else if (eventTab === "출근") {
+                          출근처리하기();
+                        }
+                      }}
+                    >
                       <img src="/Save.png" alt="" />
                       <span>저장</span>
                     </button>
@@ -853,20 +1006,7 @@ export default function page() {
                     </div>
                   </div>
 
-                  <WorkBox
-                    workList={[
-                      "사원번호",
-                      "성명",
-                      "부서",
-                      "직급",
-                      "근태유형",
-                      "출근시간",
-                      "퇴근시간",
-                      "OT",
-                      "비고",
-                      "관리",
-                    ]}
-                  />
+                  <WorkBox />
                 </div>
               </div>
             </div>
