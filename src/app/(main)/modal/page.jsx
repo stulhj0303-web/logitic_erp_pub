@@ -385,14 +385,172 @@ export default function page() {
             <span></span> <p>신고기관 정보</p>
           </div>
           <ul className={s.modal_select_card}>
-            <li>
-              <div className={s.select_card_head}>
-                <span></span>
+            <li
+              style={{
+                backgroundColor: "#EFF6FF",
+                border: "1px solid #BFDBFE",
+              }}
+            >
+              <div
+                className={s.select_card_head}
+                style={{ borderBottom: "1px solid #BFDBFE" }}
+              >
+                <span style={{ backgroundColor: "#1D4ED8" }}></span>
                 <p>국민 연금공단</p>
-                <span className={s.card_span}>팩스 가능</span>
+                <span
+                  className={s.card_span}
+                  style={{ color: "#1D4ED8", backgroundColor: "#DBEAFE" }}
+                >
+                  팩스 가능
+                </span>
+              </div>
+              <div className={s.select_card_cont}>
+                <div>
+                  <img src="/Map Pin (1).png" alt="" />
+                  <p>서울강남지사</p>
+                </div>
+                <div>
+                  <img src="/Phone.png" alt="" />
+                  <p>1355</p>
+                </div>
+                <div>
+                  <img src="/Printer (4).png" alt="" />
+                  <p>02-123-4567</p>
+                </div>
+              </div>
+            </li>
+            <li
+              style={{
+                backgroundColor: "#F0FDFA",
+                border: "1px solid #99F6E4",
+              }}
+            >
+              <div
+                className={s.select_card_head}
+                style={{ borderBottom: "1px solid #99F6E4" }}
+              >
+                <span style={{ backgroundColor: "#0F766E" }}></span>
+                <p style={{ color: "#0F766E" }}>국민건강보험공단</p>
+                <span
+                  className={s.card_span}
+                  style={{ color: "#0F766E", backgroundColor: "#CCFBF1" }}
+                >
+                  팩스 가능
+                </span>
+              </div>
+              <div className={s.select_card_cont}>
+                <div>
+                  <img src="/Map Pin (1).png" alt="" />
+                  <p>강남지사</p>
+                </div>
+                <div>
+                  <img src="/Phone.png" alt="" />
+                  <p>1577-1000</p>
+                </div>
+                <div>
+                  <img src="/Printer (4).png" alt="" />
+                  <p>02-234-5678</p>
+                </div>
+              </div>
+            </li>
+            <li
+              style={{
+                backgroundColor: "#FFFBEB",
+                border: "1px solid #FDE68A",
+              }}
+            >
+              <div
+                className={s.select_card_head}
+                style={{ borderBottom: "1px solid #FDE68A" }}
+              >
+                <span style={{ backgroundColor: "#D97706" }}></span>
+                <p style={{ color: "#D97706" }}>근로복지공단</p>
+                <span
+                  className={s.card_span}
+                  style={{ color: "#D97706", backgroundColor: "#FEF9C3" }}
+                >
+                  팩스 가능
+                </span>
+              </div>
+              <div className={s.select_card_cont}>
+                <div>
+                  <img src="/Map Pin (1).png" alt="" />
+                  <p>서울남부지사</p>
+                </div>
+                <div>
+                  <img src="/Phone.png" alt="" />
+                  <p>1588-0075</p>
+                </div>
+                <div>
+                  <img src="/Printer (4).png" alt="" />
+                  <p>02-345-6789</p>
+                </div>
               </div>
             </li>
           </ul>
+        </div>
+        <div className={s.modal_emp} style={{ backgroundColor: "white" }}>
+          <div className={s.modal_select_head}>
+            <span></span> <p>팩스 전송 설정</p>
+          </div>
+          <div className={s.modal_fax}>
+            <div className={s.modal_fax_cont}>
+              <label>수신 팩스번호</label>
+              <select>
+                <option value="기관 선택 후 자동입력">
+                  기관 선택 후 자동입력
+                </option>
+                <option value="서울 강남지사">서울 강남지사</option>
+                <option value="강남지사">강남지사</option>
+                <option value="서울 남부지사">서울 남부지사</option>
+              </select>
+            </div>
+            <div className={s.modal_fax_cont}>
+              <label>발신 팩스번호</label>
+              <div className={s.modal_fax_cont_num}>02-000-0000</div>
+            </div>
+          </div>
+          <div className={s.modal_fax_info}>
+            <img src="/Info1.png" alt="" />
+            <p>
+              팩스 전송 시 신고서는 PDF로 자동 변환되어 해당 기관 팩스로 즉시
+              발송됩니다.
+            </p>
+          </div>
+        </div>
+        <div className={s.modal_alert}>
+          <img src="/Info (1).png" alt="" />
+          <div className={s.modal_alert_text}>
+            <p>신고기한 주의</p>
+            <span>
+              취득신고 기한은 2025.07.14(월)입니다. 기한 초과 시 과태료(최대
+              10만원)가 부과될 수 있습니다.
+            </span>
+          </div>
+        </div>
+        <div className={s.modal_footer}>
+          <div className={s.modal_footer_text}>
+            <p
+              style={{
+                display: "flex",
+                color: "#1D4ED8",
+                fontWeight: "bold",
+                fontSize: "12px",
+                backgroundColor: "#EFF6FF",
+                height: "23px",
+                lineHeight: "23px",
+                borderRadius: "50px",
+              }}
+            >
+              <img src="/File Text (3).png" alt="" />
+              3종 신고서 선택됨
+            </p>
+            <span></span>
+            <p>
+              * <span>필수항목 확인 후 출력하세요</span>
+            </p>
+          </div>
+          <div className={s.modal_footer_btn}></div>
         </div>
       </div>
     </div>
