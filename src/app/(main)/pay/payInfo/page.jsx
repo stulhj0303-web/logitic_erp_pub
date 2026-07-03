@@ -1,10 +1,46 @@
+"use client";
+
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
+import baseApi from "@/api/baseApi";
+import { useEffect, useMemo, useState } from "react";
 
 export default function page() {
   // const [date, setDate] = useState(new Date());
+
+  const [open, setOpen] = useState(false);
+  const [downOpen, setDownOpen] = useState(false);
+  const [openRegisterModal, setRegisterOpen] = useState(false);
+
+  const [name, setName] = useState("");
+  const [departmentName, setDepartmentName] = useState("");
+  const [employeeList, setEmployeeList] = useState([]);
+  const [selectedEmployee, setSelectedEmployee] = useState();
+
+  const getRegisterEmployees = async () => {
+    console.log("name >>> ", name);
+    console.log("departmentName >>> ", departmentName);
+
+    const res = await baseApi.get("/api/v1/payroll/register/employees", {
+      params: {
+        name: name,
+        departmentName,
+      },
+    });
+
+    if (res?.data?.data.length === 0) {
+      setSelectedEmployee(null);
+    }
+    setEmployeeList(res?.data?.data);
+  };
+
+  useEffect(() => {
+    if (open) {
+      getRegisterEmployees();
+    }
+  }, [open]);
 
   return (
     <div className={s.container}>
@@ -54,6 +90,42 @@ export default function page() {
                 },
               ]}
             />
+
+            <div className={s.mainRtitle}>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /File Text (2).png"
+                />
+                신고서 일괄출력
+              </button>
+              <button
+                className={s.plus}
+                onClick={() => {
+                  setRegisterOpen(true);
+                }}
+              >
+                <img src="/Plus.png" />
+                신규등록
+              </button>
+            </div>
 
             <ul className={s.appoint_card}>
               <li>

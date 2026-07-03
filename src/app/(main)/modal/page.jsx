@@ -540,17 +540,51 @@ export default function page() {
                 height: "23px",
                 lineHeight: "23px",
                 borderRadius: "50px",
+                marginTop: "17px",
+                padding: "0 14px",
               }}
             >
-              <img src="/File Text (3).png" alt="" />
+              <img
+                src="/File Text (3).png"
+                alt=""
+                style={{ marginTop: "5px", marginRight: "2px" }}
+              />
               3종 신고서 선택됨
             </p>
-            <span></span>
-            <p>
-              * <span>필수항목 확인 후 출력하세요</span>
-            </p>
+            {/* <span
+              style={{
+                width: "1px",
+                height: "16px",
+                backgroundColor: "#E5E7EB",
+                margin: "20px 8px 0 8px",
+              }}
+            ></span>
+            <p
+              style={{ color: "#EF4444", fontSize: "12px", lineHeight: "58px" }}
+            >
+              *{" "}
+              <span style={{ color: "#9CA3AF" }}>
+                필수항목 확인 후 출력하세요
+              </span>
+            </p> */}
           </div>
-          <div className={s.modal_footer_btn}></div>
+          <div className={s.modal_footer_btn}>
+            <button className={s.fax_transport}>
+              <img src="/Send.png" alt="" />
+              <p>팩스 전송</p>
+            </button>
+            <button
+              className={s.fax_print}
+              style={{ backgroundColor: "#1B3A6B", color: "white" }}
+            >
+              <img src="/Printer.png" alt="" />
+              <p>신고서 출력</p>
+            </button>
+            <button className={s.fax_close}>
+              <img src="/X.png" alt="" />
+              <p>닫기</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>

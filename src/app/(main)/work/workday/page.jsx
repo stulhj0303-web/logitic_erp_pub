@@ -13,6 +13,7 @@ export default function page() {
   const [restType, setRestType] = useState("종일");
   const [navInfo, setNavInfo] = useState();
   const [isLoading, setIsLoading] = useState();
+  const [workList, setWorkList] = useState([]);
 
   useEffect(() => {
     const 이름 = localStorage.getItem("name");
@@ -24,25 +25,25 @@ export default function page() {
     });
   }, []);
 
-  const getAttendanceDaily = async () => {
-    try {
-      setIsLoading(true);
+  // const getAttendanceDaily = async () => {
+  //   try {
+  //     setIsLoading(true);
 
-      // 1. 근태리스트를 조회합니다.
-      const token = localStorage.getItem("accessToken");
-      const res = await baseApi.get("/api/v1/attendances/daily", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+  //     // 1. 근태리스트를 조회합니다.
+  //     const token = localStorage.getItem("accessToken");
+  //     const res = await baseApi.get("/api/v1/attendances/daily", {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
 
-      // 2. 근태리스트를 세팅합니다.
-      setAttendanceList(res?.data?.data);
-    } catch (e) {
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     // 2. 근태리스트를 세팅합니다.
+  //     setAttendanceList(res?.data?.data);
+  //   } catch (e) {
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   const 출근처리하기 = async () => {
     setIsLoading(true);
@@ -90,6 +91,126 @@ export default function page() {
   useEffect(() => {
     getAttendanceDaily();
   }, []);
+
+  const parsignDateTime = (time) => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+
+    const localDateTime = `${year}-${month}-${day}T${time}:00`;
+
+    return localDateTime;
+  };
+
+  const goAttend = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    try {
+      setIsLoading(true);
+      let path = "/api/v1/attendances/early-leave";
+
+      const param = {
+        earlyLeabeTime: parsignDateTime(endTime),
+        reason: selectedEarlyReason,
+      };
+
+      const res = await baseApi.post(path, param, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      toast(`${selectedTab} 정상처리 되었습니다.`, { position: "top-center" });
+      getAttendanceDaily();
+
+      setIsLoading(true);
+    } catch (e) {
+      console.error(e);
+      toast(e?.response?.data?.message || "네트워크 에러", {
+        position: "top-center",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const goAttendence = async () => {
+    const token = localStorage.getItem("accessToken");
+
+    try {
+      setIsLoading(true);
+      let path = "/api/v1/attendances/leave";
+
+      const param = {
+        startDate: startHolidayDate,
+        endDate: endHolidayDate,
+        leaveType: "연차",
+      };
+
+      const res = await baseApi.post(path, param, {
+        headers: {
+          Authorization: `Bearear ${token}`,
+        },
+      });
+
+      toast(`${selectedTab} 정상처리 되었습니다.`, { position: "top-center" });
+      getAttendanceDaily();
+
+      setIsLoading(true);
+    } catch (e) {
+      console.error(e);
+      toast(e?.response?.data?.message || "네트워크 에러", {
+        position: "top-center",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const getAttendanceDaily = async (findDate) => {
+    try {
+      setIsLoading(true);
+      const token = localStorage.getItem("accessToken");
+
+      const params = {
+        findDate: "2026-06-29",
+      };
+
+      // 검색 키워드 존재시 추가
+      if (searchKeyword) {
+        params.keyword = searchKeyword;
+      }
+
+      // 검색할 부서 존재시 추가
+      if (selectedDepartment) {
+        params.departmentName = selectedDepartment;
+      }
+
+      const res = await baseApi.get("/api/v1/attendances/daily", {
+        params,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      setAttendanceList(res?.data?.data);
+    } catch (e) {
+      console.error("e", e);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const getWorkList = async () => {
+    const token = localStorage.getItem("accessToken");
+    const res = await baseApi.get("/api/v1/attendances/daily", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      params: {},
+    });
+  };
 
   return (
     <div className={s.container}>
@@ -519,7 +640,7 @@ export default function page() {
                         </div>
                       </div>
                       <div>
-                        <label>
+                        <label style={{ marginLeft: "8px" }}>
                           조퇴 시간{" "}
                           <span
                             style={{
@@ -533,10 +654,20 @@ export default function page() {
                             필수
                           </span>{" "}
                         </label>
-                        <div className={s.time_box}>
-                          <span>14:00</span>
-                          <img src="/Clock (3).png" alt="" />
-                        </div>
+                        <input
+                          type="text"
+                          placeholder="예: 14:00"
+                          style={{
+                            fontSize: "12px",
+                            border: "1px solid #374151",
+                            width: "150px",
+                            height: "36px",
+                            borderRadius: "6px",
+                            padding: "0 12px",
+                            marginLeft: "8px",
+                            outline: "none",
+                          }}
+                        />
                       </div>
                     </div>
                     <div
@@ -974,6 +1105,8 @@ export default function page() {
                           퇴근처리하기();
                         } else if (eventTab === "출근") {
                           출근처리하기();
+                        } else if (eventTab === "조퇴") {
+                          goAttend();
                         }
                       }}
                     >

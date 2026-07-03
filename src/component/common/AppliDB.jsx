@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Spinner } from "@/components/ui/spinner";
 import axios from "axios";
+import { toast } from "sonner";
 
 export default function AppliDB() {
   const [tableList, setTableList] = useState([]);
@@ -306,7 +307,7 @@ export default function AppliDB() {
                   <li>지급계좌</li>
                   <li>
                     <img src="/Credit Card.png" alt="" />
-                    <span>{eventDetailInfo?.bankName}은행</span>
+                    <span>{eventDetailInfo?.bankName}</span>
                     <p style={{ marginLeft: "5px" }}>
                       {eventDetailInfo?.accountNumber?.replace(
                         /(?<=^.{4})(.+)(?=.{4})/g,
