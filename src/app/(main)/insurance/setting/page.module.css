@@ -22,8 +22,47 @@ body {
 
 .mainContainer {
   margin: 0 auto;
+  position: relative;
 }
 
+.mainRtitle {
+  position: absolute;
+  display: flex;
+  top: 30px;
+  right: 0;
+  gap: 10px;
+}
+
+.mainRtitle button {
+  display: flex;
+  cursor: pointer;
+}
+
+.download {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: white;
+  padding: 9px 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.download img,
+.plus img {
+  width: 13px;
+  height: 13px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.plus {
+  background-color: #1b3a6b;
+  border-radius: 8px;
+  padding: 9px 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
 .setting_search {
   padding: 14px 20px;
   background-color: white;
@@ -1019,4 +1058,59 @@ span.head_per {
   border-radius: 4px;
   font-size: 12px;
   margin-top: 0px;
+}
+
+.pdf_cont {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf_cont span.pdf_img {
+  width: 48px;
+  height: 48px;
+  background-color: #eff6ff;
+  display: block;
+  border-radius: 12px;
+  position: relative;
+  margin: 10px 0 10px 152px;
+}
+
+.pdf_img img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pdf_text p {
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.pdf_text span {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.pdf_button {
+  margin-top: 30px;
+  display: flex;
+}
+
+.pdf_button button {
+  border-radius: 8px;
+  height: 44px;
+  width: 180px;
+}
+
+.pdf_cancel {
+  border: 1px solid #d1d5db;
+}
+
+.pdf_select {
+  background-color: #2563eb;
+  color: white;
 }

@@ -22,6 +22,8 @@ export default function page() {
   const [fileInfo, setFileInfo] = useState({});
   const [fileId, setFileId] = useState("");
 
+  const [overtimeType, setOvertimetype] = useState("시간당");
+
   const fileUpload = async (fileList) => {
     const url = "http://localhost:33000/api/v1/files/upload";
     const token = localStorage.getItem("accessToken");
@@ -398,7 +400,12 @@ export default function page() {
                             계산 방식 <p style={{ color: "#EF4444" }}>*</p>
                           </label>
                           <div className={s.setting_btn}>
-                            <button className={s.time}>
+                            <button
+                              className={s.time}
+                              onClick={() => {
+                                setOvertimetype("시간당");
+                              }}
+                            >
                               <img
                                 src="/Clock (6).png"
                                 alt=""
@@ -406,7 +413,12 @@ export default function page() {
                               />
                               <span>시간당</span>
                             </button>
-                            <button className={s.day}>
+                            <button
+                              className={s.day}
+                              onClick={() => {
+                                setOvertimetype("일당");
+                              }}
+                            >
                               <img
                                 src="/Calendar (3).png"
                                 alt=""
@@ -414,7 +426,12 @@ export default function page() {
                               />
                               <span>일당</span>
                             </button>
-                            <button className={s.pay}>
+                            <button
+                              className={s.pay}
+                              onClick={() => {
+                                setOvertimetype("고정금액");
+                              }}
+                            >
                               <img src="/Bookmark.png" alt="" />
                               <span>고정금액</span>
                             </button>
@@ -453,7 +470,7 @@ export default function page() {
                       </div>
                     </div>
 
-                    <span className={s.hr}></span>
+                    <span className={s.hr1}></span>
 
                     <div className={s.setting_box}>
                       <div className={s.setting_tit}>
@@ -493,7 +510,7 @@ export default function page() {
                       </ul>
                     </div>
 
-                    <span className={s.hr}></span>
+                    <span className={s.hr1}></span>
 
                     <div className={s.setting_box}>
                       <div className={s.setting_tit}>
@@ -535,7 +552,7 @@ export default function page() {
                       </div>
                     </div>
 
-                    <span className={s.hr}></span>
+                    <span className={s.hr1}></span>
 
                     <div className={s.set_useBtn}>
                       <button className={s.del_btn}>

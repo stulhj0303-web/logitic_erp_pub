@@ -1,9 +1,12 @@
+"use client";
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
+import { useState } from "react";
 
 export default function page() {
+  const [downOpen, setDownOpen] = useState(false);
   // const [date, setDate] = useState(new Date());
 
   return (
@@ -55,6 +58,27 @@ export default function page() {
                 },
               ]}
             />
+
+            <div className={s.mainRtitle}>
+              <button className={s.download}>
+                <img
+                  src="
+                /Copy.png"
+                />
+                전년도 복사
+              </button>
+              <button className={s.download}>
+                <img
+                  src="
+                /Rotate Ccw (2).png"
+                />
+                기본값
+              </button>
+              <button className={s.plus}>
+                <img src="/Save.png" />
+                요율 저장
+              </button>
+            </div>
 
             <div className={s.setting_search}>
               <div className={s.search_day}>

@@ -7,6 +7,12 @@ import WorkBox from "@/component/common/WorkBox";
 import { useState, useEffect } from "react";
 import baseApi from "@/api/baseApi";
 import axios from "axios";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function page() {
   const [eventTab, setEventTab] = useState("출근");
@@ -14,6 +20,7 @@ export default function page() {
   const [navInfo, setNavInfo] = useState();
   const [isLoading, setIsLoading] = useState();
   const [workList, setWorkList] = useState([]);
+  const [downOpen, setDownOpen] = useState(false);
 
   useEffect(() => {
     const 이름 = localStorage.getItem("name");
@@ -226,14 +233,7 @@ export default function page() {
                 { name: "월근태현황", path: "/work/workstatus" },
               ],
             },
-            {
-              titleInfo: { iconPath: "/Plane.png", titleName: "출장관리" },
-              submenuList: [
-                { name: "출장신청" },
-                { name: "출장정산" },
-                { name: "출장사용현황" },
-              ],
-            },
+
             {
               titleInfo: { iconPath: "/Calendar.png", titleName: "휴가관리" },
               submenuList: [
@@ -256,6 +256,25 @@ export default function page() {
                 { headinfo: "날짜별 직원 근태 현황을 등록하고 수정합니다." },
               ]}
             />
+
+            <div className={s.mainRtitle}>
+              <button
+                className={s.download}
+                onClick={() => {
+                  setDownOpen(true);
+                }}
+              >
+                <img
+                  src="
+                /Download.png"
+                />
+                PDF 다운로드
+              </button>
+              <button className={s.plus}>
+                <img src="/Save.png" />
+                일괄저장
+              </button>
+            </div>
 
             <div className={s.work_search}>
               <div className={s.search_cont}>
@@ -452,9 +471,26 @@ export default function page() {
                         onClick={() => {
                           setEventTab("퇴근");
                         }}
+                        style={{
+                          backgroundColor:
+                            eventTab === "퇴근"
+                              ? "rgb(223, 205, 255)"
+                              : "white",
+                          border:
+                            eventTab === "퇴근"
+                              ? "1px solid #7C3AED"
+                              : "1px solid #DDD6FE",
+                        }}
                       >
                         <img src="/Plane (1).png" alt="" />
-                        <span>퇴근</span>
+                        <span
+                          style={{
+                            fontWeight: eventTab === "퇴근" ? "bold" : "normal",
+                            color: "#7C3AED ",
+                          }}
+                        >
+                          퇴근
+                        </span>
                       </button>
                       <button className={s.btn8}>
                         <img src="/Book Open.png" alt="" />
@@ -1146,6 +1182,26 @@ export default function page() {
           </div>
         </div>
       </div>
+      <Dialog open={downOpen} onOpenChange={setDownOpen}>
+        <DialogContent className="w-[400px]" showCloseButton={false}>
+          <div className={s.pdf_cont}>
+            <span className={s.pdf_img}>
+              <img src="/Download (1).png" alt="" />
+            </span>
+            <div className={s.pdf_text}>
+              <p>PDF 다운로드</p>
+              <span>
+                선택한 데이터를 PDF 파일로 다운로드합니다. <br />
+                계속 진행하시겠습니까?
+              </span>
+            </div>
+            <div className={s.pdf_button}>
+              <button className={s.pdf_cancel}>취소</button>
+              <button className={s.pdf_select}>확인</button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

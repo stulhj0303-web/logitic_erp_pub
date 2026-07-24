@@ -328,24 +328,118 @@ export default function page() {
                 </li>
                 <li>2025.07.10</li>
                 <li>- </li>
-                <li style={{ display: "flex", fontSize: "8px", gap: "4px" }}>
-                  <p>국민연금</p>
-                  <p>건강보험</p>
-                  <p>고용보험</p>
-                  <p>산재보험</p>
+                <li
+                  style={{
+                    display: "flex",
+                    fontSize: "8px",
+                    gap: "4px",
+                    fontWeight: "bold",
+                    paddingLeft: "6px",
+                    paddingTop: "15px",
+                  }}
+                >
+                  <p
+                    style={{
+                      borderRadius: "50px",
+                      backgroundColor: "#DBEAFE",
+                      height: "12px",
+                      lineHeight: "12px",
+                      padding: "2px 4px",
+                      color: "#1D4ED8",
+                    }}
+                  >
+                    국민연금
+                  </p>
+                  <p
+                    style={{
+                      borderRadius: "50px",
+                      backgroundColor: "#CCFBF1",
+                      height: "12px",
+                      lineHeight: "12px",
+                      padding: "2px 4px",
+                      color: "#0F766E",
+                    }}
+                  >
+                    건강보험
+                  </p>
+                  <p
+                    style={{
+                      borderRadius: "50px",
+                      backgroundColor: "#FEF9C3",
+                      height: "12px",
+                      lineHeight: "12px",
+                      padding: "2px 4px",
+                      color: "#CA8A04",
+                    }}
+                  >
+                    고용보험
+                  </p>
+                  <p
+                    style={{
+                      borderRadius: "50px",
+                      backgroundColor: "#FEE2E2",
+                      height: "12px",
+                      lineHeight: "12px",
+                      padding: "2px 4px",
+                      color: "#DC2626",
+                    }}
+                  >
+                    산재보험
+                  </p>
                 </li>
                 <li>신규입사</li>
                 <li>
-                  <p>
-                    <span></span>미신고
+                  <p
+                    style={{
+                      display: "flex",
+                      color: "#E11D48",
+                      backgroundColor: "#FFF1F2",
+                      height: "20px",
+                      borderRadius: "50px",
+                      width: "61px",
+                      border: "1px solid #FECACA",
+                      lineHeight: "20px",
+                      margin: "12px 0 0 13px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: "6px",
+                        height: "6px",
+                        borderRadius: "50%",
+                        backgroundColor: "#E11D48",
+                        display: "block",
+                        marginTop: "6px",
+                        marginLeft: "6px",
+                        marginRight: "5px",
+                      }}
+                    ></span>
+                    미신고
                   </p>
                 </li>
                 <li>
-                  <p style={{ display: "flex" }}>
+                  <p
+                    style={{
+                      display: "flex",
+                      backgroundColor: "#FEF9C3",
+                      height: "18px",
+                      borderRadius: "50px",
+                      width: "52px",
+                      color: "#D97706",
+                      lineHeight: "18px",
+                      margin: "13px 0 0 23px",
+                    }}
+                  >
                     <img
                       src="/Clock (5).png"
                       alt=""
-                      style={{ width: "9px", height: "9px" }}
+                      style={{
+                        width: "9px",
+                        height: "9px",
+                        marginTop: "4px",
+                        marginLeft: "5px",
+                        marginRight: "5px",
+                      }}
                     />
                     D-5
                   </p>

@@ -624,3 +624,58 @@ body {
   border-radius: 4px;
   font-size: 12px;
 }
+
+.pdf_cont {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf_cont span.pdf_img {
+  width: 48px;
+  height: 48px;
+  background-color: #eff6ff;
+  display: block;
+  border-radius: 12px;
+  position: relative;
+  margin: 10px 0 10px 152px;
+}
+
+.pdf_img img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pdf_text p {
+  font-size: 17px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.pdf_text span {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.pdf_button {
+  margin-top: 30px;
+  display: flex;
+}
+
+.pdf_button button {
+  border-radius: 8px;
+  height: 44px;
+  width: 180px;
+}
+
+.pdf_cancel {
+  border: 1px solid #d1d5db;
+}
+
+.pdf_select {
+  background-color: #2563eb;
+  color: white;
+}

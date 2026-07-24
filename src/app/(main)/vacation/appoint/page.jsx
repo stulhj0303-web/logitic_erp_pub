@@ -24,14 +24,7 @@ export default function page() {
                 { name: "월근태현황", path: "/work/workstatus" },
               ],
             },
-            {
-              titleInfo: { iconPath: "/Plane.png", titleName: "출장관리" },
-              submenuList: [
-                { name: "출장신청" },
-                { name: "출장정산" },
-                { name: "출장사용현황" },
-              ],
-            },
+
             {
               titleInfo: { iconPath: "/Calendar.png", titleName: "휴가관리" },
               submenuList: [

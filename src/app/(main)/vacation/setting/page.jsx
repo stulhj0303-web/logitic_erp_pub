@@ -1,7 +1,16 @@
+"use client";
+
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Aside from "@/component/common/Aside";
 import Header from "@/component/common/Header";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function page() {
   return (
@@ -18,14 +27,7 @@ export default function page() {
                 { name: "월근태현황", path: "/work/workstatus" },
               ],
             },
-            {
-              titleInfo: { iconPath: "/Plane.png", titleName: "출장관리" },
-              submenuList: [
-                { name: "출장신청" },
-                { name: "출장정산" },
-                { name: "출장사용현황" },
-              ],
-            },
+
             {
               titleInfo: { iconPath: "/Calendar.png", titleName: "휴가관리" },
               submenuList: [
@@ -51,6 +53,16 @@ export default function page() {
                 },
               ]}
             />
+
+            <div className={s.mainRtitle}>
+              <button className={s.download}>
+                <img
+                  src="
+                /Save.png"
+                />
+                설정저장
+              </button>
+            </div>
 
             <div className={s.work_search}>
               <div className={s.search_cont}>

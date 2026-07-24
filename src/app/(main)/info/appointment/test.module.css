@@ -126,7 +126,7 @@ body {
 .mainContainer {
   width: 98%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .mainHeader {
@@ -461,12 +461,42 @@ body {
   right: 152px;
 }
 
+.modal_head {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+  background-color: #1b3a6b;
+  width: 600px;
+  height: 56px;
+  margin-top: -16px;
+  margin-left: -16px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal_head img {
+  width: 18px;
+  height: 18px;
+  margin-top: 19px;
+}
+
+.modal_head p {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 56px;
+  color: white;
+}
+
 .modal_cont {
   padding: 16px;
   background-color: white;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  width: 600px;
+  margin-left: -16px;
+  margin-top: -16px;
 }
 
 .modal_box {
@@ -528,7 +558,7 @@ body {
   background-color: white;
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  width: 262px;
+  width: 268px;
   color: #9ca3af;
   font-size: 13px;
   font-weight: 400;
@@ -746,21 +776,4 @@ body {
 .pdf_select {
   background-color: #2563eb;
   color: white;
-}
-
-.modal_head {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  padding: 0 20px;
-}
-
-.modal_head img {
-  width: 18px;
-  height: 18px;
-}
-
-.modal_head p {
-  font-size: 16px;
-  font-weight: 700;
 }

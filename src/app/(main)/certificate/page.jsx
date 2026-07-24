@@ -1,10 +1,17 @@
+"use client";
 import Nav from "@/component/common/Nav";
 import s from "./page.module.css";
 import Header from "@/component/common/Header";
 import Aside from "@/component/common/Aside";
 import Certificate from "@/component/common/Certificate";
+import { useState, useEffect } from "react";
 
 export default function page() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleVisible = () => {
+    setIsVisible(!isVisible);
+  };
   return (
     <div className={s.container}>
       <Nav />
@@ -51,6 +58,19 @@ export default function page() {
               ]}
             />
 
+            <div className={s.mainRtitle}>
+              <button className={s.download} onClick={() => handleVisible()}>
+                <img
+                  src="
+                /Clock (10).png"
+                />
+                발급이력
+              </button>
+              <button className={s.plus}>
+                <img src="/Printer.png" />
+                출력하기
+              </button>
+            </div>
             <div className={s.certifiC}>
               <div className={s.certifi_Head}>
                 <img src="/File Check.png" alt="" />
@@ -236,22 +256,24 @@ export default function page() {
                 </div>
               </div>
             </div>
-            <div>
-              <Certificate
-                cer={[
-                  {
-                    date: "발급일시",
-                    type: "증명서 종류",
-                    use: "용도",
-                    submmit: "제출처",
-                    lang: "언어",
-                    page: "부수",
-                    number: "발급번호",
-                    manage: "관리",
-                  },
-                ]}
-              />
-            </div>
+            {isVisible && (
+              <div>
+                <Certificate
+                  cer={[
+                    {
+                      date: "발급일시",
+                      type: "증명서 종류",
+                      use: "용도",
+                      submmit: "제출처",
+                      lang: "언어",
+                      page: "부수",
+                      number: "발급번호",
+                      manage: "관리",
+                    },
+                  ]}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

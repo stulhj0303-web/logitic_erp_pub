@@ -21,7 +21,48 @@ body {
 
 .mainContainer {
   margin: 0 auto;
+  position: relative;
 }
+
+.mainRtitle {
+  position: absolute;
+  display: flex;
+  top: 30px;
+  right: 0;
+}
+
+.mainRtitle button {
+  display: flex;
+  cursor: pointer;
+}
+
+.download {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: white;
+  padding: 9px 15px;
+  font-size: 14px;
+  color: black;
+}
+
+.download img,
+.plus img {
+  width: 13px;
+  height: 13px;
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.plus {
+  background-color: #1b3a6b;
+  border-radius: 8px;
+  padding: 9px 15px;
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .peopleInfo {
   width: 11%;
   background-color: #1e293b;
